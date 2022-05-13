@@ -10,7 +10,7 @@ export const Navbar = () => {
     <Wrapper>
         <Container>
             <NavbarWrapper>
-                <Logo onClick={() => navigate('/home')}>
+                <Logo onClick={() => navigate('/')}>
                     <Logo.Icon />
                     <Logo.Title>Houzing</Logo.Title>
                 </Logo>

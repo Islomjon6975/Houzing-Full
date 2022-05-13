@@ -1,12 +1,14 @@
-import Generic from '../pages/Generic';
+import Home from '../pages/Home';
+import Properties from '../pages/Properties';
+import Contacts from '../pages/Contacts';
 
 
 export const navbar = [
     {
         id: 1,
         title: 'Home',
-        path: '/home',
-        element: <Generic />,
+        path: '/',
+        element: <Home />,
         search: '?',
         hidden: false,
         private: false,
@@ -15,7 +17,7 @@ export const navbar = [
         id: 2,
         title: 'Properties',
         path: '/properties',
-        element: <Generic />,
+        element: <Properties />,
         search: '?',
         hidden: false,
         private: false,
@@ -24,7 +26,7 @@ export const navbar = [
         id: 3,
         title: 'Contacts',
         path: '/contacts',
-        element: <Generic />,
+        element: <Contacts />,
         search: '?',
         hidden: false,
         private: false,
