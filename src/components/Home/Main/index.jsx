@@ -2,9 +2,9 @@ import React from 'react'
 import { Carousel } from 'antd';
 import img1 from '../../../assets/imgs/home1.png'
 import img2 from '../../../assets/imgs/home2.png'
-import { Box, Container, Price, Subtitle, Title, Wrapper } from './style';
+import { Box, Container, Form, Price, Subtitle, Title, Wrapper } from './style';
 import { Button } from '../../Generic';
-
+import { Select } from 'antd';
 export const Main = () => {
 
   // const contentStyle = {
@@ -15,7 +15,8 @@ export const Main = () => {
   //   textAlign: 'center',
   //   background: '#364d79',
   // };
-
+  const { Option } = Select;
+  
   return (
     <Container>
       <Carousel effect="fade">
@@ -30,7 +31,7 @@ export const Main = () => {
               justifyContent: 'center',
               flexDirection: 'column',
               width: '100%',
-              height: '571px',
+              minHeight: '571px',
               color: '#fff',
               lineHeight: '160px',
               textAlign: 'center',
@@ -57,6 +58,33 @@ export const Main = () => {
               </Wrapper>
               <Price>$5,250/mo</Price>
               <Button width={'180px'}>Read more</Button>
+              <Form>
+                <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
+                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Select defaultValue="Price" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Wrapper>
+                  <Form.Advanced  size="small">
+                    <Form.Settings />Advanced
+                  </Form.Advanced>
+                  <Form.Advanced search='search'  size="small">
+                    <Form.Search />Search
+                  </Form.Advanced>
+                </Form.Wrapper>
+              </Form>
             </div>
         </div>
         <div>
@@ -70,7 +98,7 @@ export const Main = () => {
               justifyContent: 'center',
               flexDirection: 'column',
               width: '100%',
-              height: '571px',
+              minHeight: '571px',
               color: '#fff',
               lineHeight: '160px',
               textAlign: 'center',
@@ -97,6 +125,33 @@ export const Main = () => {
             </Wrapper>
             <Price>$5,250/mo</Price>
             <Button width={'180px'}>Read more</Button>
+              <Form>
+                <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
+                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Select defaultValue="Price" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Wrapper>
+                  <Form.Advanced  size="small">
+                    <Form.Settings />Advanced
+                  </Form.Advanced>
+                  <Form.Advanced search='search'  size="small">
+                    <Form.Search />Search
+                  </Form.Advanced>
+                </Form.Wrapper>
+              </Form>
           </div>
         </div>
         <div>
@@ -110,7 +165,7 @@ export const Main = () => {
               justifyContent: 'center',
               flexDirection: 'column',
               width: '100%',
-              height: '571px',
+              minHeight: '571px',
               color: '#fff',
               lineHeight: '160px',
               textAlign: 'center',
@@ -137,6 +192,33 @@ export const Main = () => {
             </Wrapper>
             <Price>$5,250/mo</Price>
             <Button width={'180px'}>Read more</Button>
+              <Form>
+                <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
+                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Select defaultValue="Price" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Wrapper>
+                  <Form.Advanced  size="small">
+                    <Form.Settings />Advanced
+                  </Form.Advanced>
+                  <Form.Advanced search='search'  size="small">
+                    <Form.Search />Search
+                  </Form.Advanced>
+                </Form.Wrapper>
+              </Form>
           </div>
         </div>
         <div>
@@ -150,7 +232,7 @@ export const Main = () => {
               justifyContent: 'center',
               flexDirection: 'column',
               width: '100%',
-              height: '571px',
+              minHeight: '571px',
               color: '#fff',
               lineHeight: '160px',
               textAlign: 'center',
@@ -177,6 +259,33 @@ export const Main = () => {
             </Wrapper>
             <Price>$5,250/mo</Price>
             <Button width={'180px'}>Read more</Button>
+              <Form>
+                <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
+                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Select defaultValue="Price" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Wrapper>
+                  <Form.Advanced  size="small">
+                    <Form.Settings />Advanced
+                  </Form.Advanced>
+                  <Form.Advanced search='search'  size="small">
+                    <Form.Search />Search
+                  </Form.Advanced>
+                </Form.Wrapper>
+              </Form>
           </div>
         </div>
         <div>
@@ -189,7 +298,7 @@ export const Main = () => {
               justifyContent: 'center',
               flexDirection: 'column',
               width: '100%',
-              height: '571px',
+              minHeight: '571px',
               color: '#fff',
               lineHeight: '160px',
               textAlign: 'center',
@@ -216,6 +325,33 @@ export const Main = () => {
               </Wrapper>
               <Price>$5,250/mo</Price>
               <Button width={'180px'}>Read more</Button>
+              <Form>
+                <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
+                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Select defaultValue="Price" style={{ width: '100%', textAlign: 'left'}}>
+                  <Option value="disabled" disabled>
+                  <Option value="jack">Jack</Option>
+                  <Option value="lucy">Lucy</Option>
+                    Disabled
+                  </Option>
+                  <Option value="Yiminghe">yiminghe</Option>
+                </Form.Select>
+                <Form.Wrapper>
+                  <Form.Advanced  size="small">
+                    <Form.Settings />Advanced
+                  </Form.Advanced>
+                  <Form.Advanced search='search'  size="small">
+                    <Form.Search />Search
+                  </Form.Advanced>
+                </Form.Wrapper>
+              </Form>
           </div>
         </div>
       </Carousel>

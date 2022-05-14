@@ -54,6 +54,11 @@ const Container = styled.div`
         transform: scale(0.98);
         opacity: 0.7;
     }
+    @media (max-width: 768px) {
+        height: ${({ children }) => children && '40px'};
+        min-width: ${({ children }) => (children ==='Read more' ? '100px' : '100%')};
+        width: ${({ children }) => (children ==='Read more' ? '120px' : '100%')};
+    }
 `;
 
 export { Container }

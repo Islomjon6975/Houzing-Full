@@ -22,6 +22,7 @@ export const Button = ({
         width={width}
         height={height}
         onClick={onClick}
+        children={children}
     >
         {children}
     </Container>
