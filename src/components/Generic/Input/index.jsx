@@ -8,6 +8,7 @@ export const Input = ({
     height,
     width,
     type,
+    value,
     mr,
     ml,
     mb,
@@ -27,6 +28,7 @@ export const Input = ({
             width={width}
             height={height}
             pl={pl}
+            value={value}
         />    
     </Wrapper>
   )

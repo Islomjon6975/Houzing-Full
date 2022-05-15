@@ -57,8 +57,8 @@ const Container = styled.input`
 
 const Icon = styled.div`
     position: absolute;
-    transform: translate(-50%, -50%);
     top: 50%;
     left: 30px;
+    transform: translate(-50%, -50%);
 `
 export { Wrapper, Container, Icon };
