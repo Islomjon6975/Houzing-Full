@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { navbar } from '../utils/navbar'
 
@@ -16,4 +16,5 @@ export const Root = () => {
       </Routes>
     </>
   )
+  
 }

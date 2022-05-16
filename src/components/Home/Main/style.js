@@ -3,14 +3,78 @@ import {ReactComponent as bed} from '../../../assets/icons/bed.svg';
 import {ReactComponent as bath} from '../../../assets/icons/bath.svg';
 import {ReactComponent as car} from '../../../assets/icons/car.svg';
 import {ReactComponent as ruler} from '../../../assets/icons/ruler.svg';
-import { Input, Select, Button } from 'antd';
+import { Input, Button } from 'antd';
 import {ReactComponent as address} from '../../../assets/icons/address.svg';
 import {ReactComponent as settings} from '../../../assets/icons/settings.svg';
 import {ReactComponent as search} from '../../../assets/icons/search.svg';
+import {ReactComponent as arrowright} from '../../../assets/icons/arrow-right.svg';
+import {ReactComponent as arrowleft} from '../../../assets/icons/arrow-left.svg';
 
 
 const Container = styled.div`
+    position: relative;
 `
+
+const ArrowRight = styled(arrowright)`
+    position: absolute;
+    z-index: 2;
+    right: 8px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    padding: 12px;
+    color: black;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 50%;
+    cursor: pointer;
+    :hover{
+        opacity: 0.97;
+    }
+    & path {
+        fill: #0d263b;
+    }
+    @media (max-width: 768px) {
+        width: 27px;
+        height: 27px;
+        padding: 8px;
+    }
+`
+
+const ArrowLeft = styled(arrowleft)`
+    position: absolute;
+    z-index: 2;
+    left: 8px;
+    top: 50%;
+    transform: translate(50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    padding: 12px;
+    color: black;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 50%;
+    cursor: pointer;
+    :hover{
+        opacity: 0.97;
+    }
+    & path {
+        fill: #0d263b;
+    }
+    @media (max-width: 768px) {
+        width: 27px;
+        height: 27px;
+        padding: 8px;
+    }
+`
+
 const Title = styled.div`
     font-style: normal;
     font-weight: 700;
@@ -155,18 +219,6 @@ Form.Input = styled(Input)`
     margin-bottom: 10px;
 `
 
-Form.Select = styled(Select)`
-    border: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: #696969;
-    margin-bottom: 10px;
-    outline: none;
-    width: 100%;
-`
-
 Form.Address = styled(address)``
 
 Form.Wrapper = styled.div`
@@ -202,4 +254,4 @@ Form.Search = styled(search)`
 Form.Search = styled(search)``
 
 
-export { Container, Title, Subtitle, Wrapper, Box, Price, Form}
+export { Container, ArrowLeft, ArrowRight, Title, Subtitle, Wrapper, Box, Price, Form}

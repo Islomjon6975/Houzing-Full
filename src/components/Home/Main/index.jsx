@@ -1,25 +1,27 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Carousel } from 'antd';
 import img1 from '../../../assets/imgs/home1.png'
 import img2 from '../../../assets/imgs/home2.png'
-import { Box, Container, Form, Price, Subtitle, Title, Wrapper } from './style';
+import { ArrowLeft, ArrowRight, Box, Container, Form, Price, Subtitle, Title, Wrapper } from './style';
 import { Button } from '../../Generic';
-import { Select } from 'antd';
+// import { Select } from 'antd';
 export const Main = () => {
 
-  // const contentStyle = {
-  //   width: '100%',
-  //   height: '571px',
-  //   color: '#fff',
-  //   lineHeight: '160px',
-  //   textAlign: 'center',
-  //   background: '#364d79',
-  // };
-  const { Option } = Select;
+  const carouselRef = useRef();
+
+  const onLeft = () => {
+    carouselRef.current.prev();
+  }
+
+  const onRight = () => {
+    carouselRef.current.next();
+  }
   
   return (
     <Container>
-      <Carousel effect="fade">
+      <ArrowLeft onClick={onLeft} />
+      <ArrowRight onClick={onRight} />
+      <Carousel ref={carouselRef}  autoplay effect="fade">
         <div>
           <div 
             style={{
@@ -60,22 +62,6 @@ export const Main = () => {
               <Button width={'180px'}>Read more</Button>
               <Form>
                 <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
-                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
-                  <Option value="disabled" disabled>
-                  <Option value="jack">Jack</Option>
-                  <Option value="lucy">Lucy</Option>
-                    Disabled
-                  </Option>
-                  <Option value="Yiminghe">yiminghe</Option>
-                </Form.Select>
-                <Form.Select defaultValue="Price" style={{ width: '100%', textAlign: 'left'}}>
-                  <Option value="disabled" disabled>
-                  <Option value="jack">Jack</Option>
-                  <Option value="lucy">Lucy</Option>
-                    Disabled
-                  </Option>
-                  <Option value="Yiminghe">yiminghe</Option>
-                </Form.Select>
                 <Form.Wrapper>
                   <Form.Advanced  size="small">
                     <Form.Settings />Advanced
@@ -127,7 +113,7 @@ export const Main = () => {
             <Button width={'180px'}>Read more</Button>
               <Form>
                 <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
-                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                {/* <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
                   <Option value="disabled" disabled>
                   <Option value="jack">Jack</Option>
                   <Option value="lucy">Lucy</Option>
@@ -142,7 +128,7 @@ export const Main = () => {
                     Disabled
                   </Option>
                   <Option value="Yiminghe">yiminghe</Option>
-                </Form.Select>
+                </Form.Select> */}
                 <Form.Wrapper>
                   <Form.Advanced  size="small">
                     <Form.Settings />Advanced
@@ -194,7 +180,7 @@ export const Main = () => {
             <Button width={'180px'}>Read more</Button>
               <Form>
                 <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
-                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                {/* <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
                   <Option value="disabled" disabled>
                   <Option value="jack">Jack</Option>
                   <Option value="lucy">Lucy</Option>
@@ -209,7 +195,7 @@ export const Main = () => {
                     Disabled
                   </Option>
                   <Option value="Yiminghe">yiminghe</Option>
-                </Form.Select>
+                </Form.Select> */}
                 <Form.Wrapper>
                   <Form.Advanced  size="small">
                     <Form.Settings />Advanced
@@ -261,7 +247,7 @@ export const Main = () => {
             <Button width={'180px'}>Read more</Button>
               <Form>
                 <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
-                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                {/* <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
                   <Option value="disabled" disabled>
                   <Option value="jack">Jack</Option>
                   <Option value="lucy">Lucy</Option>
@@ -276,7 +262,7 @@ export const Main = () => {
                     Disabled
                   </Option>
                   <Option value="Yiminghe">yiminghe</Option>
-                </Form.Select>
+                </Form.Select> */}
                 <Form.Wrapper>
                   <Form.Advanced  size="small">
                     <Form.Settings />Advanced
@@ -327,7 +313,7 @@ export const Main = () => {
               <Button width={'180px'}>Read more</Button>
               <Form>
                 <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
-                <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
+                {/* <Form.Select defaultValue="Status" style={{ width: '100%', textAlign: 'left'}}>
                   <Option value="disabled" disabled>
                   <Option value="jack">Jack</Option>
                   <Option value="lucy">Lucy</Option>
@@ -342,7 +328,7 @@ export const Main = () => {
                     Disabled
                   </Option>
                   <Option value="Yiminghe">yiminghe</Option>
-                </Form.Select>
+                </Form.Select> */}
                 <Form.Wrapper>
                   <Form.Advanced  size="small">
                     <Form.Settings />Advanced
