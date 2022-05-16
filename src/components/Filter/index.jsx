@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Button, Input } from '../../Generic';
+import { Button, Input } from '../Generic';
 import { Container, Wrapper, Icon, Advanced } from './style'
 import { Popover} from 'antd';
 

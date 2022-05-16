@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {ReactComponent as address} from '../../../assets/icons/address.svg'
-import {ReactComponent as settings} from '../../../assets/icons/settings.svg'
-import {ReactComponent as search} from '../../../assets/icons/search.svg'
+import {ReactComponent as address} from '../../assets/icons/address.svg'
+import {ReactComponent as settings} from '../../assets/icons/settings.svg'
+import {ReactComponent as search} from '../../assets/icons/search.svg'
 
 
 const Container = styled.div`

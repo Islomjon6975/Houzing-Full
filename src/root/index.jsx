@@ -5,7 +5,7 @@ import { navbar } from '../utils/navbar'
 
 export const Root = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route element={<Navbar />}>
             {navbar.map((item) => (
@@ -14,6 +14,6 @@ export const Root = () => {
             )}
         </Route>
       </Routes>
-    </div>
+    </>
   )
 }
