@@ -1,13 +1,15 @@
 import React, { useRef } from 'react'
-import { Carousel } from 'antd';
+import { Carousel, Popover } from 'antd';
 import img1 from '../../../assets/imgs/home1.png'
 import img2 from '../../../assets/imgs/home2.png'
-import { ArrowLeft, ArrowRight, Box, Container, Form, Price, Subtitle, Title, Wrapper } from './style';
-import { Button } from '../../Generic';
+import { Advanced, ArrowLeft, ArrowRight, Box, Container, Form, Price, Subtitle, Title, Wrapper } from './style';
+import { Button, Input } from '../../Generic';
 // import { Select } from 'antd';
 export const Main = () => {
 
   const carouselRef = useRef();
+
+
 
   const onLeft = () => {
     carouselRef.current.prev();
@@ -16,6 +18,35 @@ export const Main = () => {
   const onRight = () => {
     carouselRef.current.next();
   }
+
+  const content = (
+    <Advanced>
+      <Advanced.Title>Address</Advanced.Title>
+      <Advanced.Section>
+        <Input placeholder={'Country'} />
+        <Input placeholder={'Region'} />
+      </Advanced.Section>
+      <Advanced.Section>
+        <Input placeholder={'City'} />
+        <Input placeholder={'Zip Code'} />
+      </Advanced.Section>
+      <Advanced.Title>Address</Advanced.Title>
+      <Advanced.Section>
+        <Input placeholder={'Rooms'} />
+        <Input placeholder={'Size'} />
+        <Input placeholder={'Sort'} />
+      </Advanced.Section>
+      <Advanced.Title>Address</Advanced.Title>
+      <Advanced.Section>
+        <Input placeholder={'Min price'} />
+        <Input placeholder={'Max price'} />
+      </Advanced.Section>
+      <Advanced.Section>
+        <Button  width={'128px'} type={'secondary'} >Cancel</Button>
+        <Button  width={'128px'} type={'primary'} >Submit</Button>
+      </Advanced.Section>
+    </Advanced>
+  );
   
   return (
     <Container>
@@ -63,9 +94,11 @@ export const Main = () => {
               <Form>
                 <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
                 <Form.Wrapper>
+                  <Popover placement="topLeft"  content={content} trigger="click" >
                   <Form.Advanced  size="small">
                     <Form.Settings />Advanced
                   </Form.Advanced>
+                  </Popover>
                   <Form.Advanced search='search'  size="small">
                     <Form.Search />Search
                   </Form.Advanced>

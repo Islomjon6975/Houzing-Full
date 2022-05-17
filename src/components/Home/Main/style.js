@@ -253,5 +253,31 @@ Form.Search = styled(search)`
 
 Form.Search = styled(search)``
 
+const Advanced = styled.div`
+    width:100%;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px 15px 0px 15px;
+`
 
-export { Container, ArrowLeft, ArrowRight, Title, Subtitle, Wrapper, Box, Price, Form}
+Advanced.Title = styled.div`
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 20px;
+    color: #0D263B;
+    margin-bottom: 10px;
+`
+
+Advanced.Section = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 20px;
+`
+
+
+export { Container, ArrowLeft, ArrowRight, Title, Subtitle, Wrapper, Box, Price, Form, Advanced}
