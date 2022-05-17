@@ -4,12 +4,9 @@ import img1 from '../../../assets/imgs/home1.png'
 import img2 from '../../../assets/imgs/home2.png'
 import { Advanced, ArrowLeft, ArrowRight, Box, Container, Form, Price, Subtitle, Title, Wrapper } from './style';
 import { Button, Input } from '../../Generic';
-// import { Select } from 'antd';
 export const Main = () => {
 
   const carouselRef = useRef();
-
-
 
   const onLeft = () => {
     carouselRef.current.prev();
@@ -25,8 +22,6 @@ export const Main = () => {
       <Advanced.Section>
         <Input placeholder={'Country'} />
         <Input placeholder={'Region'} />
-      </Advanced.Section>
-      <Advanced.Section>
         <Input placeholder={'City'} />
         <Input placeholder={'Zip Code'} />
       </Advanced.Section>
@@ -52,7 +47,7 @@ export const Main = () => {
     <Container>
       <ArrowLeft onClick={onLeft} />
       <ArrowRight onClick={onRight} />
-      <Carousel ref={carouselRef}  autoplay effect="fade">
+      <Carousel width='fit-content' ref={carouselRef}  autoplay effect="fade">
         <div>
           <div 
             style={{

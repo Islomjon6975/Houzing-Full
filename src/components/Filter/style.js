@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     max-width: 1440px;
-    /* background-color: red; */
+    padding: 0 130px;
     width: 100%;
     height: 100%;
     gap: 20px;
