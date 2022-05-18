@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Properties = () => {
   return (
-    <div>Properties</div>
+    <div>Properties daf</div>
   )
 }
 
-export default Properties
+export default Properties;
