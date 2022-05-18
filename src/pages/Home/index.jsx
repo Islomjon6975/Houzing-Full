@@ -1,13 +1,11 @@
 import React from 'react'
-import Main from '../../components/Home/Main'
-import Filter from '../../components/Filter'
 import { Container } from './style'
+import { HomeComponent } from '../../components/Home'
 
 export const Home = () => {
   return (
     <Container>
-      <Filter />
-      <Main />
+      <HomeComponent />
     </Container>
   )
 }
