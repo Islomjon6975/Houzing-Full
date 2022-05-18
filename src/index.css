@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;691;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import 'antd/dist/antd.css';
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 body{
     font-family: 'Fira Code', monospace;
@@ -42,7 +43,46 @@ body{
 }
 
 
+.title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: #0D263B;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
 
-@media (max-width: 425px) {
+.subtitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0D263B;
+}
 
+.description{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #696969;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleted {
+    text-decoration: line-through;
+}
+
+.endToRight{
+    display: flex;
+    margin-left: auto;
 }

@@ -5,7 +5,7 @@ import './index.css';
 import { Root } from './root';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-const query = QueryClient();
+const query = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
