@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Card from '../../Card'
 import AliceCarousel from 'react-alice-carousel'
-import { Carousel, Container, Wrapper } from './style'
+import { ArrowLeft, ArrowRight, Carousel, Container, Wrapper } from './style'
 
 export const Recommended = () => {
     const items = [
@@ -14,6 +14,13 @@ export const Recommended = () => {
         <Card mr={20} />,
         <Card  />,
     ]
+    const slider = useRef();
+
+    const arrowLeft = () => {
+        // console.log(slider.current);
+        // slider.current?.sliderNext()
+    }
+
   return (
     <Container>
         <div className="title center">Recommended</div>
@@ -22,7 +29,9 @@ export const Recommended = () => {
         </div>
         <Wrapper>
             <Carousel>
-                <AliceCarousel autoWidth items={items} />
+                <AliceCarousel ref={slider} autoWidth items={items} />
+                <ArrowLeft onClick={arrowLeft} />
+                <ArrowRight onClick={() => slider.current?.sliderPrev()} />
             </Carousel>
         </Wrapper>
     </Container>

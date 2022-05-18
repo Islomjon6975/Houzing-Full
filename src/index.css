@@ -2,6 +2,7 @@
 @import 'antd/dist/antd.css';
 @import "react-alice-carousel/lib/alice-carousel.css";
 
+
 body{
     font-family: 'Fira Code', monospace;
     background-color: #ffffff;
