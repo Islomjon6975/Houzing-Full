@@ -1,12 +1,15 @@
 import React from 'react'
-import { Container, Img, Info, InfoWrapper, Icons, Footer } from './style'
+import { Container, Img, Info, InfoWrapper, Icons, Footer, User } from './style'
 import noimg from '../../assets/imgs/noimage.png'
 
-export const Card = ({ info }) => {
+export const Card = ({ info, mr }) => {
   return (
-    <Container>
+    <Container mr={mr}>
         <Img src={info?.img  || noimg} />
         <InfoWrapper>
+            <User>
+                <User.Img src={info?.img || noimg} />
+            </User>
             <div className='subtitle'>New Apartment Nice Wiew</div>
             <div className="description">Quincy St, Brooklyn, NY, USA</div>
         

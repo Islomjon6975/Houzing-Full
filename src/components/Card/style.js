@@ -16,7 +16,7 @@ const Container = styled.div`
     max-width: 380px;
     min-width: 280px;
     height: 430px;
-    margin: 50px;
+    margin-right: ${({ mr }) => mr && `${mr}px`};
 `
 
 const Img = styled.img`
@@ -28,6 +28,7 @@ const Img = styled.img`
 `
 
 const InfoWrapper = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 25px 25px 0px 20px;
@@ -84,7 +85,27 @@ const Footer = styled.div`
     height: 100%;
 `
 
+const User = styled.div`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 46px;
+    height: 46px;
+    right: 20px;
+    top: -23px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(13, 38, 59, 0.2);
+    overflow: hidden;
+`
 
-export { Container, Img, InfoWrapper, Info, Icons, Footer }
+User.Img = styled.img`
+    width: 43px;
+    height: 43px;
+    object-fit: cover;
+`
+
+export { Container, Img, InfoWrapper, Info, Icons, Footer, User }
 
 

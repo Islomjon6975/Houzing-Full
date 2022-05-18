@@ -2,14 +2,14 @@ import React from 'react'
 import Main from './Main'
 import Filter from '../Filter'
 import { Container } from './style'
-import Card from '../Card'
+import { Recommended } from './Recomented'
 
 export const HomeComponent = () => {
   return (
     <Container>
       <Filter />
       <Main />
-      <Card />
+      <Recommended />
     </Container>
   )
 }
