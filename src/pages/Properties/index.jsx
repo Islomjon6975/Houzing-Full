@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Properties = () => {
   return (
-    <div>Properties daf</div>
+    <div>Properties dafdgdfgdf</div>
   )
 }
 
