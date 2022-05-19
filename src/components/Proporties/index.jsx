@@ -38,7 +38,7 @@ export const ProportiesComponent = () => {
             <Cards>
                 {
                     data.map((value) => (
-                        <Card info={value} />
+                        <Card key={value?.id} info={value} />
                     ))
                 }
             </Cards>

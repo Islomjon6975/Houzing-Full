@@ -26,8 +26,8 @@ export const Recommended = () => {
         <Wrapper>
             <Carousel>
                 <AliceCarousel ref={slider} autoWidth items={items} />
-                <ArrowLeft onClick={() => slider.current?.sliderNext()} />
-                <ArrowRight onClick={() => slider.current?.sliderPrev()} />
+                <ArrowLeft onClick={() => slider?.current?.Next()} />
+                <ArrowRight onClick={() => slider?.current?.Prev()} />
             </Carousel>
             <Cards>
                 <Card mb={20} />
