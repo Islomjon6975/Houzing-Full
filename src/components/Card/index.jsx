@@ -2,9 +2,9 @@ import React from 'react'
 import { Container, Img, Info, InfoWrapper, Icons, Footer, User } from './style'
 import noimg from '../../assets/imgs/noimage.png'
 
-export const Card = ({ info, mr }) => {
+export const Card = ({ info, mr, mb }) => {
   return (
-    <Container mr={mr}>
+    <Container mr={mr} mb={mb}>
         <Img src={info?.img  || noimg} />
         <InfoWrapper>
             <User>

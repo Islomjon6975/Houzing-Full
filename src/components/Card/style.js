@@ -17,6 +17,7 @@ const Container = styled.div`
     min-width: 280px;
     height: 430px;
     margin-right: ${({ mr }) => mr && `${mr}px`};
+    margin-bottom: ${({ mb }) => mb && `${mb}px`};
 `
 
 const Img = styled.img`
@@ -24,7 +25,6 @@ const Img = styled.img`
     height: 220px;
     min-height: 220px;
     max-height: 220px;
-    background-color: red;
 `
 
 const InfoWrapper = styled.div`

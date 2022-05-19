@@ -52,6 +52,7 @@ body{
     line-height: 36px;
     color: #0D263B;
     text-align: center;
+    margin-bottom: 8px;
     letter-spacing: -0.02em;
 }
 
@@ -98,3 +99,23 @@ body{
     user-select: none; 
 }
 
+
+@media (max-width: 768px) {
+    .title{
+        font-weight: 600;
+        font-size: 25px;
+    }
+    .description{
+        font-size: 15px;
+    }
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    border: none;
+    border-bottom: 2px solid #E6E9EC;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector:focus{
+    border: none;
+    border-bottom: 2px solid #E6E9EC;
+}

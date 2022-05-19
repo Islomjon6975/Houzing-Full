@@ -1,9 +1,6 @@
 import React from 'react'
+import ProportiesComponent from '../../components/Proporties';
 
-export const Properties = () => {
-  return (
-    <div>Properties dafdgdfgdf</div>
-  )
-}
+export const Properties = () => <ProportiesComponent />
 
 export default Properties;

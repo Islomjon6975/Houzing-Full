@@ -25,6 +25,22 @@ const Carousel = styled.div`
     display: flex;
     width: 1440px;
     padding: 0 130px;
+    @media (max-width: 768px) {
+        display: none;
+    }
+`
+
+const Cards = styled.div`
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1440px;
+    padding: 0 130px;
+    @media (max-width: 768px) {
+        display: flex;
+        padding: 0;
+    }
 `
 
 const ArrowLeft = styled(arrowright)`
@@ -119,4 +135,4 @@ const ArrowRight = styled(arrowleft)`
     padding-right: 10px;
 `
 
-export { Container, Wrapper, Carousel, ArrowLeft, ArrowRight }
+export { Container, Wrapper, Carousel, ArrowLeft, ArrowRight, Cards }
