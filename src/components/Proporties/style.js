@@ -7,6 +7,9 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    @media (max-width: 768px) {
+        margin-top: 70px;
+    }
 `
 
 const Wrapper = styled.div`
@@ -16,6 +19,9 @@ const Wrapper = styled.div`
     max-width: 1440px;
     padding: 0 130px;
     padding-top: 64px;
+    @media (max-width: 768px) {
+        padding: 0;
+    }
 `
 
 const CountWrapper = styled.div`
@@ -41,7 +47,12 @@ const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap : 20px;
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 `
+
+
 
 
 export { Container, Wrapper, CountWrapper, Cards }

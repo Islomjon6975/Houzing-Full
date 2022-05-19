@@ -5,39 +5,39 @@ import noimg from '../../assets/imgs/noimage.png'
 export const Card = ({ info, mr, mb }) => {
   return (
     <Container mr={mr} mb={mb}>
-        <Img src={info?.img  || noimg} />
+        <Img src={info?.attachments[0]?.imgPath || noimg} />
         <InfoWrapper>
             <User>
-                <User.Img src={info?.img || noimg} />
+                <User.Img src={info?.attachments[0]?.imgPath || noimg} />
             </User>
-            <div className='subtitle'>New Apartment Nice Wiew</div>
-            <div className="description">Quincy St, Brooklyn, NY, USA</div>
-        
+            <div className='subtitle' style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>{info?.description}</div>
+            <div className="description"  style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>{info?.address}</div>
+
             <Info>
                 <Info.Detail>
                     <Icons.Bed />
-                    <div className="description">{info?.beds || 0} Beds</div>
+                    <div className="description">{info?.houseDetails?.room || 0} Beds</div>
                 </Info.Detail>
                 <Info.Detail>
                     <Icons.Bath />
-                    <div className="description">{info?.baths || 0} Baths</div>
+                    <div className="description">{info?.houseDetails?.bath || 0} Baths</div>
                 </Info.Detail>
                 <Info.Detail>
                     <Icons.Garage />
-                    <div className="description">{info?.garages || 0} Garages</div>
+                    <div className="description">{info?.houseDetails?.garage || 0} Garages</div>
                 </Info.Detail>
                 <Info.Detail>
                     <Icons.Ruler />
-                    <div className="description">{info?.sq || 0} Sq Ft</div>
+                    <div className="description">{info?.houseDetails?.area || 0} Sq Ft</div>
                 </Info.Detail>
             </Info>
         </InfoWrapper>
         <Footer>
             <Info.Detail>
                 <div className="description deleted">
-                    $2,800/mo
+                    {info?.salePrice || 0}/mo
                 </div>
-                <div className="subtitle">$7,500/mo</div>
+                <div className="subtitle">{info?.price || 0}/mo</div>
             </Info.Detail>
             <Info.Detail className='endToRight'>
                 <div className='center'>

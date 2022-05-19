@@ -4,12 +4,22 @@ import Settings from '../Filter'
 import { Cards, Container, CountWrapper, Wrapper } from './style'
 import { Select } from 'antd';
 import Card from '../Card';
+import { useQuery } from 'react-query';
 
 
+const {REACT_APP_BASE_URL:url} = process.env
 const { Option } = Select;
 
 export const ProportiesComponent = () => {
     const [data, setData] = useState([]);
+
+    useQuery('dependancies', () => {
+        return fetch(`${url}/v1/houses/list`)
+                    .then((res) => res.json());
+    }, {onSuccess: (res) => {
+        setData(res?.dataList[0])
+    }})
+
   return (
     <Container>
         <Settings />
@@ -26,28 +36,11 @@ export const ProportiesComponent = () => {
                 </CountWrapper.Sort>
             </CountWrapper>
             <Cards>
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
-                <Card  />
+                {
+                    data.map((value) => (
+                        <Card info={value} />
+                    ))
+                }
             </Cards>
         </Wrapper>
     </Container>
