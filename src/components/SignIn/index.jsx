@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../Generic';
 import { Container, Formm, InputPassword, Inputt, Wrapper, Title, Checkboxx, Section, Forgot } from './style'
+import { notification } from 'antd';
 
 
 export const SignIn = () => {
@@ -15,6 +16,15 @@ export const SignIn = () => {
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
       };
+
+      const login = (type) => {
+        navigate('/')
+        notification[type]({
+            message: '',
+            description:
+              'You have successfully logged in.',
+        });
+      }
   return (
     <Container>
         <Wrapper>
@@ -40,7 +50,7 @@ export const SignIn = () => {
                     <Checkboxx>Remember me</Checkboxx>
                     <Forgot>Forgot</Forgot>
                 </Section>
-                <Button type={'primary'} mt={15} htmlType="submit">SignIn</Button>
+                <Button onClick={() => login('success')} type={'primary'} mt={15} htmlType="submit">SignIn</Button>
                 <div onClick={() => navigate('/register')} className="subtitle center" style={{marginTop: '20px', cursor: 'pointer'}}>Did you Register?</div>
             </Formm>
         </Wrapper>

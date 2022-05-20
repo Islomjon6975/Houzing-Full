@@ -43,6 +43,10 @@ body{
     height: 10px;
 }
 
+.ant-notification{
+    margin-top: 60px;
+}
+
 
 .title{
     font-family: 'Montserrat';

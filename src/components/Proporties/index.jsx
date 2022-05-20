@@ -5,6 +5,7 @@ import { Cards, Container, CountWrapper, Wrapper } from './style'
 import { Select } from 'antd';
 import Card from '../Card';
 import { useQuery } from 'react-query';
+import { Button } from '../Generic';
 
 
 const {REACT_APP_BASE_URL:url} = process.env
@@ -42,6 +43,7 @@ export const ProportiesComponent = () => {
                     ))
                 }
             </Cards>
+            <Button type={'primary'} width={'250px'} mt={48} mb={96}>Show more</Button>
         </Wrapper>
     </Container>
   )
