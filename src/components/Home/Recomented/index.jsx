@@ -19,8 +19,8 @@ export const Recommended = () => {
 
   return (
     <Container>
-        <div className="title center">Recommended</div>
-        <div className="description center" >
+        <div className="title center nocopy">Recommended</div>
+        <div className="description center nocopy" >
             Siz orzu qilgan, siz izlagan shinam va arzon uylar.
         </div>
         <Wrapper>

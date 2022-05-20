@@ -18,7 +18,7 @@ export const Main = () => {
 
   const content = (
     <Advanced>
-      <Advanced.Title>Address</Advanced.Title>
+      <Advanced.Title className='nocopy'>Address</Advanced.Title>
       <Advanced.Section>
         <Input placeholder={'Country'} />
         <Input placeholder={'Region'} />
@@ -37,8 +37,8 @@ export const Main = () => {
         <Input placeholder={'Max price'} />
       </Advanced.Section>
       <Advanced.Section>
-        <Button  width={'128px'} type={'secondary'} >Cancel</Button>
-        <Button  width={'128px'} type={'primary'} >Submit</Button>
+        <Button  width={'128px'} type={'secondary'} className='nocopy' >Cancel</Button>
+        <Button  width={'128px'} type={'primary'} className='nocopy' >Submit</Button>
       </Advanced.Section>
     </Advanced>
   );
@@ -64,38 +64,38 @@ export const Main = () => {
               lineHeight: '160px',
               textAlign: 'center',
             } }>
-              <Title >Skyper Pool Partment</Title>
-              <Subtitle>112 Glenwood Ave Hyde Park, Boston, MA</Subtitle>
+              <Title  className='nocopy'>Skyper Pool Partment</Title>
+              <Subtitle className='nocopy'>112 Glenwood Ave Hyde Park, Boston, MA</Subtitle>
               <Wrapper>
                 <Box>
                   <Box.Bed />
-                  <Box.Desc>4 beds</Box.Desc>
+                  <Box.Desc className='nocopy'>4 beds</Box.Desc>
                 </Box>
                 <Box>
                   <Box.Bath />
-                  <Box.Desc>5 Baths</Box.Desc>
+                  <Box.Desc className='nocopy'>5 Baths</Box.Desc>
                 </Box>
                 <Box>
                   <Box.Car />
-                  <Box.Desc>1 Garage</Box.Desc>
+                  <Box.Desc className='nocopy'>1 Garage</Box.Desc>
                 </Box>
                 <Box>
                   <Box.Ruler />
-                  <Box.Desc>1200 Sq Ft</Box.Desc>
+                  <Box.Desc className='nocopy'>1200 Sq Ft</Box.Desc>
                 </Box>
               </Wrapper>
-              <Price>$5,250/mo</Price>
-              <Button width={'180px'}>Read more</Button>
+              <Price className='nocopy'>$5,250/mo</Price>
+              <Button width={'180px'} className='nocopy'>Read more</Button>
               <Form>
                 <Form.Input size="large" placeholder="Enter an address, city, ZIP code" />
                 <Form.Wrapper>
                   <Popover placement="topLeft"  content={content} trigger="click" >
                   <Form.Advanced  size="small">
-                    <Form.Settings />Advanced
+                    <Form.Settings className='nocopy' />Advanced
                   </Form.Advanced>
                   </Popover>
                   <Form.Advanced search='search'  size="small">
-                    <Form.Search />Search
+                    <Form.Search className='nocopy' />Search
                   </Form.Advanced>
                 </Form.Wrapper>
               </Form>

@@ -27,7 +27,7 @@ export const ProportiesComponent = () => {
             <div className="title">Proporties</div>
             <div className="description">Siz orzu qilgan, siz izlagan shinam va arzon uylar.</div>
             <CountWrapper>
-                <div className="description">{data.length || 0} results</div>
+                <div className="description">{data?.length || 0} results</div>
                 <CountWrapper.Sort defaultValue="Sort by: Newest Listings" style={{ width: 250}} >
                     <Option value="jack">Sort by: Newest Listings</Option>
                     <Option value="lucy">Sort by: Oldest Listings</Option>

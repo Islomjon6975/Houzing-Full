@@ -18,14 +18,22 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 130px;
+    @media (max-width: 768px) {
+        padding: 0;
+        width: 100%;
+    }
 `
 
 const Section = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 40px;
     gap: 70px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 Section.Item = styled.div`
@@ -33,6 +41,9 @@ Section.Item = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 768px) {
+        padding: 0 80px;
+    }
 `
 
 const Icons = styled.div``
