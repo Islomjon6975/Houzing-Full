@@ -1,6 +1,8 @@
 import Home from '../pages/Home';
 import Properties from '../pages/Properties';
 import Contacts from '../pages/Contacts';
+import Register from '../components/Register';
+import { SignIn } from '../components/SignIn';
 
 
 export const navbar = [
@@ -29,6 +31,24 @@ export const navbar = [
         element: <Contacts />,
         search: '?',
         hidden: false,
+        private: false,
+    },
+    {
+        id: 4,
+        title: 'Sign in',
+        path: '/signin',
+        element: <SignIn />,
+        search: '?',
+        hidden: true,
+        private: false,
+    },
+    {
+        id: 5,
+        title: 'Register',
+        path: '/register',
+        element: <Register />,
+        search: '?',
+        hidden: true,
         private: false,
     },
 ]

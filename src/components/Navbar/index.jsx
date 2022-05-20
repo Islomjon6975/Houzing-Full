@@ -48,8 +48,8 @@ export const Navbar = () => {
                     <Logo.Title>Houzing</Logo.Title>
                 </Logo>
                 <NavbarBody>
-                    {navbar.map(({title, id, path}) => {
-                            return(
+                    {navbar.map(({title, id, path, hidden}) => {
+                            return !hidden && (
                                 <Link key={id} to={path}>
                                     {title}
                                 </Link>
@@ -58,7 +58,7 @@ export const Navbar = () => {
                     }
                 </NavbarBody>
                 <Span>
-                    <Button class='loginn' onClick={() => navigate('/login')} width={'120px'}>Login</Button>
+                    <Button class='loginn' onClick={() => navigate('/signin')} width={'120px'}>Login</Button>
                 </Span>
                 <User />
             </NavbarWrapper>
