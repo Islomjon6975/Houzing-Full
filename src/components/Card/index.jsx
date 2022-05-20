@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Img, Info, InfoWrapper, Icons, Footer, User } from './style'
 import noimg from '../../assets/imgs/noimage.png'
 
-export const Card = ({ info, mr, mb }) => {
+export const Card = ({ info, mr, mb, bg }) => {
   return (
     <Container mr={mr} mb={mb}>
         <Img src={info?.attachments[0]?.imgPath || noimg} />
@@ -42,7 +42,7 @@ export const Card = ({ info, mr, mb }) => {
             <Info.Detail className='endToRight'>
                 <div className='center'>
                     <Icons.Resize />
-                    <Icons.Love />
+                    <Icons.Love bg={bg} />
                 </div>
             </Info.Detail>
         </Footer>

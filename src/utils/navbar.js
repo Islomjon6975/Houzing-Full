@@ -3,6 +3,7 @@ import Properties from '../pages/Properties';
 import Contacts from '../pages/Contacts';
 import Register from '../components/Register';
 import { SignIn } from '../components/SignIn';
+import { Favourite } from '../pages/Favourite';
 
 
 export const navbar = [
@@ -49,6 +50,15 @@ export const navbar = [
         element: <Register />,
         search: '?',
         hidden: true,
+        private: false,
+    },
+    {
+        id: 6,
+        title: 'Favourite',
+        path: '/favourite',
+        element: <Favourite />,
+        search: '?',
+        hidden: false,
         private: false,
     },
 ]

@@ -21,7 +21,6 @@ export const ProportiesComponent = () => {
         setData(res?.dataList[0])
     }})
 
-    console.log(data);
 
   return (
     <Container>

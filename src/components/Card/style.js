@@ -69,7 +69,10 @@ Icons.Love = styled(love)`
     height: 35px;
     padding: 10px;
     cursor: pointer;
-    background: #F6F8F9;
+    background-color: ${({bg}) => bg || '#F6F8F9'} ;
+    path{
+        fill: white;
+    }
     :active{
         transform: scale(0.97);
     }
