@@ -21,10 +21,18 @@ export const Footer = () => {
                     <Description>support@houzing.com.</Description>
                 </Section>
                 <Socials>
-                    < Icons.Facebook />
-                    < Icons.Twitter />
-                    < Icons.Instagram />
-                    < Icons.Linkedin />
+                    <Icons.Wrapper>
+                        < Icons.Facebook />
+                    </Icons.Wrapper>
+                    <Icons.Wrapper>
+                        < Icons.Twitter />
+                    </Icons.Wrapper>
+                    <Icons.Wrapper>
+                        < Icons.Instagram />
+                    </Icons.Wrapper>
+                    <Icons.Wrapper>
+                        < Icons.Linkedin />
+                    </Icons.Wrapper>
                 </Socials>
             </Wrapper.Column>
             <Wrapper.Column>

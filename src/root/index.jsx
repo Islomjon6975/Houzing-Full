@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route} from 'react-router-dom'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import { NotFound } from '../components/NotFound'
 import { navbar } from '../utils/navbar'
 
 export const Root = () => {
@@ -14,8 +15,9 @@ export const Root = () => {
               )
             )}
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
-        <Footer />
+      <Footer />
     </>
   )
   

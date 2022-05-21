@@ -29,9 +29,10 @@
         justify-content: space-between;
         @media (max-width: 768px) {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             width: 100%;
-            padding: 48px 0px 24px 25px;
+            padding: 40px 0 20px 0;
+
         }
         
 
@@ -39,7 +40,10 @@
 
     Wrapper.Column = styled.div`
         @media (max-width: 768px) {
-            margin-bottom: 57px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     `
 
@@ -62,11 +66,20 @@
         line-height: 24px;
         color: #FFFFFF;
         margin-bottom: 32px;
+        @media (max-width: 768px) {
+            font-size: 17px;
+        }
     `
 
     const Section = styled.div`
         display: flex;
         margin-bottom: 20px;
+        @media (max-width: 768px) {
+            width: 100%;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+        }
     `
 
     const Description = styled.div`
@@ -76,6 +89,11 @@
         line-height: 20px;
         color: #FFFFFF;
         max-width: 300px;
+        @media (max-width: 768px) {
+            font-size: 13px;
+            max-width: 250px;
+
+        }
     `
 
     const Icons = styled.div``
@@ -85,6 +103,9 @@
         align-items: center;
         gap: 37px;
         margin-top: 42px;
+        @media (max-width: 768px) {
+            margin-top: 20px;
+        }
     `
 
     Icons.Location = styled(location)`
@@ -96,6 +117,11 @@
         :active{
             transform: scale(0.98);
         }
+        @media (max-width: 768px) {
+            width: 17px;
+            height: 17px;
+            margin-right: 18px;
+        }
     `
     Icons.Call = styled(call)`
         margin-right: 22px;
@@ -103,6 +129,11 @@
         transition: all .3s ease;
         :active{
             transform: scale(0.98);
+        }
+        @media (max-width: 768px) {
+            width: 17px;
+            height: 17px;
+            margin-right:18px;
         }
     `
     Icons.Email = styled(email)`
@@ -112,10 +143,33 @@
         :active{
             transform: scale(0.98);
         }
+        @media (max-width: 768px) {
+            width: 17px;
+            height: 17px;
+            margin-right: 18px;
+        }
     `
+
+    Icons.Wrapper = styled.div`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        :hover{
+            background-color: #253C4F;
+            border-radius: 3px;
+        }
+        :active{
+            opacity: 0.7;
+        }
+    `
+
     Icons.Facebook = styled(facebook)`
         cursor: pointer;
         transition: all .3s ease;
+        width: 36px;
+        
         :active{
             transform: scale(0.98);
         }
@@ -144,7 +198,6 @@
     `
 
     const Bottom = styled.div`
-        position: relative;
         display: flex;
         justify-content: center;
         width: 100%;
@@ -159,6 +212,7 @@
     `
 
     Bottom.Container = styled.div`
+        position: relative;
         max-width: 1440px;
         width: 100%;
         padding: 0 130px;
@@ -169,7 +223,7 @@
             flex-direction: column;
             align-items: center;
             height: 148px;
-            padding: 0 70px ;
+            padding: 0 50px ;
             text-align: center;
         }
 
@@ -182,6 +236,12 @@
 
     const Logo = styled(logo)`
         margin-right: 12px;
+        @media (max-width: 768px) {
+            width: 25px;
+            height: 25px;
+            margin-right: 6px;
+        }
+
     `
 
     const LogoTitle = styled.div`
@@ -189,6 +249,9 @@
         font-size: 20px;
         font-weight: 500;
         color: white;
+        @media (max-width: 768px) {
+            font-size: 19px;
+        }
     `
 
     const BottomDesctiption = styled.div`
@@ -197,6 +260,9 @@
         font-size: 14px;
         line-height: 20px;
         color: #FFFFFF;
+        @media (max-width: 768px) {
+            font-size: 13px;
+        }
     `
 
     const Top = styled(BackTop)`

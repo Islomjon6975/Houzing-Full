@@ -4,6 +4,7 @@ import Contacts from '../pages/Contacts';
 import Register from '../components/Register';
 import { SignIn } from '../components/SignIn';
 import { Favourite } from '../pages/Favourite';
+import { NotFound } from '../components/NotFound';
 
 
 export const navbar = [
@@ -58,7 +59,7 @@ export const navbar = [
         path: '/favourite',
         element: <Favourite />,
         search: '?',
-        hidden: false,
+        hidden: true,
         private: false,
     },
 ]
