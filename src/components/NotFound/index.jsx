@@ -13,8 +13,8 @@ export const NotFound = () => {
             <Title>Ohh! Page Not Found</Title>
             <Description>We can’t seem to find the page you’re looking for</Description>
             <Section>
-                <Input placeholder={'Enter your email'} width={'500px'} />
-                <Button type={'primary'} width={'50px'}>
+                <Input placeholder={'Enter your email'} mb={17}  />
+                <Button type={'primary'} mb={17} width={'50px' }>
                     <Telegraph />
                 </Button>
             </Section>
