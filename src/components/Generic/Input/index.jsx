@@ -17,6 +17,8 @@ export const Input = ({
     pl,
     pt,
     pb,
+    name,
+    defaultValue,
 }) => {
   return (
     <Wrapper mr={mr} ml={ml} mb={mb} mt={mt}>
@@ -29,6 +31,8 @@ export const Input = ({
             height={height}
             pl={pl}
             value={value}
+            name={name}
+            defaultValue={defaultValue}
         />    
     </Wrapper>
   )

@@ -1,25 +1,31 @@
-
 import React, { useState } from 'react'
 import Settings from '../Filter'
-import { Cards, Container, CountWrapper, Wrapper } from './style'
 import { Select } from 'antd';
 import Card from '../Card';
 import { useQuery } from 'react-query';
 import { Button } from '../Generic';
-
+import { useLocation } from 'react-router-dom';
+import useSearch from '../../hooks/useSearch';
+import { Cards, Container, CountWrapper, Wrapper } from './style'
 
 const {REACT_APP_BASE_URL:url} = process.env
 const { Option } = Select;
 
 export const ProportiesComponent = () => {
     const [data, setData] = useState([]);
+    const { search } = useLocation();
+    const query = useSearch();
 
-    useQuery('dependancies', () => {
-        return fetch(`${url}/v1/houses/list`)
-                    .then((res) => res.json());
-    }, {onSuccess: (res) => {
-        setData(res?.dataList[0])
-    }})
+
+    useQuery(
+        ['dependancies', search], 
+        () => {
+            return fetch(`${url}/v1/houses/list${search}`)
+                        .then((res) => res.json());
+        }, {onSuccess: (res) => {
+            setData(res?.dataList[0] || [])
+        }}
+    )
 
 
   return (
@@ -39,7 +45,7 @@ export const ProportiesComponent = () => {
             </CountWrapper>
             <Cards>
                 {
-                    data.map((value) => (
+                    data?.map((value) => (
                         <Card key={value?.id} info={value} />
                     ))
                 }
@@ -51,3 +57,7 @@ export const ProportiesComponent = () => {
 }
 
 export default ProportiesComponent
+
+// useReplace 
+// useSearch
+// useRequest
