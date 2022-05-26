@@ -37,6 +37,11 @@ export const SignIn = () => {
       {
         onSuccess: (res) => {
           console.log(res, 'res');
+          localStorage.setItem('token', res?.authenticationToken)
+          console.log(res, 'token');
+          if(res?.authenticationToken){
+            navigate('/home')
+          }
         },
         onError: (res) => {
           console.log(res, 'error');
@@ -45,10 +50,8 @@ export const SignIn = () => {
     )
 
     const onSubmit = () => {
-      console.log(email);
-      console.log(password);
       mutate();
-      navigate('/')
+      
       // notification[]({
       //     message: '',
       //     description:
