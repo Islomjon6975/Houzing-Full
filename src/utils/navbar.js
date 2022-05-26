@@ -11,7 +11,7 @@ export const navbar = [
     {
         id: 1,
         title: 'Home',
-        path: '/',
+        path: '/home',
         element: <Home />,
         search: '?',
         hidden: false,

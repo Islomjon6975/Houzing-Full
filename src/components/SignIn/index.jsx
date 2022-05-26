@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../Generic';
 import { Container, Formm, InputPassword, Inputt, Wrapper, Title, Checkboxx, Section, Forgot } from './style'
@@ -8,6 +8,8 @@ import { notification } from 'antd';
 export const SignIn = () => {
 
     const navigate = useNavigate();
+    const emailRef = useRef('')
+    const passwordRef = useRef('')
 
     const onFinish = (values) => {
         console.log('Success:', values);
