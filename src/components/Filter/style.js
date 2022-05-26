@@ -43,6 +43,7 @@ const Advanced = styled.div`
     background: #FFFFFF;
     border-radius: 5px;
     padding: 30px 30px 0px 30px;
+    
 `
 
 Advanced.Title = styled.div`

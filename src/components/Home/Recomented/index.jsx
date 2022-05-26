@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 import Card from '../../Card'
+import { ArrowLeft, ArrowRight, Cards, Container, Wrapper } from './style';
 import AliceCarousel from 'react-alice-carousel'
-import { ArrowLeft, ArrowRight, Cards, Carousel, Container, Wrapper } from './style'
-import 'react-alice-carousel/lib/alice-carousel.css';
 
 export const Recommended = () => {
+    const slider = useRef();
     const items = [
         <Card mr={20} />,
         <Card mr={20} />,
@@ -15,26 +15,31 @@ export const Recommended = () => {
         <Card mr={20} />,
         <Card  />,
     ]
-    const slider = useRef();
+    
 
   return (
-    <Container>
-        <div className="title center nocopy">Recommended</div>
-        <div className="description center nocopy" >
-            Siz orzu qilgan, siz izlagan shinam va arzon uylar.
-        </div>
-        <Wrapper>
-            <Carousel>
-                <AliceCarousel ref={slider} autoWidth items={items} />
-                <ArrowLeft onClick={() => slider?.current?.Next()} />
-                <ArrowRight onClick={() => slider?.current?.Prev()} />
-            </Carousel>
-            <Cards>
-                <Card mb={20} />
-                <Card mb={20} />
-                
-            </Cards>
-        </Wrapper>
+    <Container className='nocopy'>
+      <div className='title center'>Recommended</div>
+      <div className='description center'>
+        Siz orzu qilgan, siz izlagan shinam va arzon uylar.
+      </div>
+      <Wrapper>
+        <Cards>
+          <AliceCarousel
+            // arrows={false}
+            ref={slider}
+            autoWidth
+            mouseTracking
+            items={items}
+          />
+          <ArrowRight onClick={() => slider.current?.slidePrev()}>
+            &lang;
+          </ArrowRight>
+          <ArrowLeft onClick={() => slider.current?.slideNext()}>
+            &rang;
+          </ArrowLeft>
+        </Cards>
+      </Wrapper>
     </Container>
   )
 }
