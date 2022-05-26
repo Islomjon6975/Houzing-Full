@@ -7,8 +7,32 @@ import house from '../../../assets/imgs/house.png'
 import apartment from '../../../assets/imgs/apartment.png'
 import office from '../../../assets/imgs/office.png'
 import villa from '../../../assets/imgs/villa.png'
+import { useQuery } from 'react-query';
+
+const {REACT_APP_BASE_URL: url} = process.env
 
 export const Categories = () => {
+
+
+    useQuery(
+        '', 
+        () => {
+        return fetch(`${url}/v1/categories`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+
+        }).then((res) => res.json())
+        },
+        {
+            onSuccess: (res) => {
+                console.log(res, 'res');
+            }
+        }
+    )
+
+
+
     const items = [
         <Col style={{backgroundImage: `url(${apartment})`, }}><Col.House /></Col>,
         <Col style={{backgroundImage: `url(${apartment})`, }} ><Col.Apartment /></Col>,

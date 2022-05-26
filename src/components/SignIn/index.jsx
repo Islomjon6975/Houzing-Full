@@ -39,7 +39,7 @@ export const SignIn = () => {
           console.log(res, 'res');
           localStorage.setItem('token', res?.authenticationToken)
           console.log(res, 'token');
-          if(res?.authenticationToken){
+          if(res?.ok){
             navigate('/home')
           }
         },
