@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { forwardRef } from 'react'
 import { Container, Icon, Wrapper } from './style'
 
-export const Input = ({
+export const Input = forwardRef(
+  ({
     children, 
     onChange,
     placeholder,
@@ -19,11 +20,12 @@ export const Input = ({
     pb,
     name,
     defaultValue,
-}) => {
+  }, ref)=>{
   return (
     <Wrapper mr={mr} ml={ml} mb={mb} mt={mt}>
         <Icon>{children}</Icon>
         <Container 
+            ref={ref}
             onChange={onChange}
             placeholder={placeholder}
             type={type} 
@@ -37,5 +39,6 @@ export const Input = ({
     </Wrapper>
   )
 }
+)
 
 export default Input
