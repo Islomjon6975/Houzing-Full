@@ -79,8 +79,9 @@ const Col = styled.div`
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
   margin-right: 20px;
   box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06), 0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
   transition: all .9s ease;
   :hover {
     .img-categories{
@@ -92,6 +93,7 @@ const Col = styled.div`
 Col.Img = styled.img`
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 `
 
 const ColItem = styled.div`

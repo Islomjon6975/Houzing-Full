@@ -8,56 +8,61 @@ import apartment from '../../../assets/imgs/apartment.png'
 import office from '../../../assets/imgs/office.png'
 import villa from '../../../assets/imgs/villa.png'
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 
 const {REACT_APP_BASE_URL:url} = process.env;
 
 export const Categories = () => {
+    const navigate = useNavigate()
     const slider = useRef();
     const [list, setList] = useState([])
+    const goto = (id) => {
+      navigate(`/properties?category_id=${id}`)
+    }
     const items = [
-      <Col >
+      <Col onClick={() => goto(1)} >
         <Col.Img className="img-categories" src={cottage} />
         <ColItem>
           <ColItem.Apartment />
           <ColItem.Title>{list[0]}</ColItem.Title>
         </ColItem>
       </Col>,
-        <Col >
+        <Col onClick={() => goto(2)}>
           <Col.Img className="img-categories" src={apartment} />
           <ColItem>
             <ColItem.Apartment />
             <ColItem.Title>{list[1]}</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col >
+        <Col onClick={() => goto(3)}>
           <Col.Img className="img-categories" src={office} />
           <ColItem>
             <ColItem.Office />
             <ColItem.Title>{list[2]}</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col >
+        <Col onClick={() => goto(4)}>
           <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.Villa />
             <ColItem.Title>{list[3]}</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col >
+        <Col onClick={() => goto(5)}>
           <Col.Img className="img-categories" src={apartment} />
           <ColItem>
             <ColItem.House />
             <ColItem.Title>{list[3]}</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col >
+        <Col onClick={() => goto(6)}>
           <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.House />
             <ColItem.Title>{list[6]}</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col >
+        <Col onClick={() => goto(7)}>
           <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.House />
