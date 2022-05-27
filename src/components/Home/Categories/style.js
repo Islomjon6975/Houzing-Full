@@ -1,4 +1,9 @@
 import styled from 'styled-components'
+import {ReactComponent as house} from '../../../assets/icons/house.svg'
+import {ReactComponent as apartment} from '../../../assets/icons/apartment.svg'
+import {ReactComponent as office} from '../../../assets/icons/office.svg'
+import {ReactComponent as villa} from '../../../assets/icons/villa.svg'
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -61,4 +66,58 @@ const ArrowRight = styled(ArrowLeft)`
   padding-right: 10px;
 `;
 
-export { Container, Cards, ArrowLeft, Wrapper, ArrowRight };
+const Col = styled.div`
+  position: relative;
+  display: flex;
+  max-width:320px;
+  min-width: 250px;
+  height: 350px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(.jpg);
+  /* XXL */
+  margin-right: ${({mr}) => mr && `${mr}px`};
+
+
+  box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06), 0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+`
+
+Col.Img = styled.img`
+  width:100%;
+  height: 350px;
+`
+
+const ColItem = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+ColItem.Title = styled.div` 
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-top: 24px;
+`
+
+ColItem.House = styled(house)`
+
+`
+ColItem.Apartment = styled(apartment)`
+
+`
+ColItem.Office = styled(office)`
+
+`
+ColItem.Villa = styled(villa)`
+
+`
+
+export { Container, Cards, Col, ColItem, ArrowLeft, Wrapper, ArrowRight };
