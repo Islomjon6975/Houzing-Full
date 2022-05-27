@@ -9,7 +9,7 @@ export const Input = forwardRef(
     height,
     width,
     type,
-    value,
+    
     mr,
     ml,
     mb,
@@ -20,6 +20,7 @@ export const Input = forwardRef(
     pb,
     name,
     defaultValue,
+    value,
   }, ref)=>{
   return (
     <Wrapper mr={mr} ml={ml} mb={mb} mt={mt}>
@@ -32,9 +33,8 @@ export const Input = forwardRef(
             width={width}
             height={height}
             pl={pl}
-            value={value}
             name={name}
-            defaultValue={defaultValue}
+            value={value}
         />    
     </Wrapper>
   )
