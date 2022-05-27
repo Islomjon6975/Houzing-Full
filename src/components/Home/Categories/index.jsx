@@ -1,17 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Card from '../../Card'
+import { ArrowLeft, ArrowRight, Cards, Container, Wrapper } from './style';
 import AliceCarousel from 'react-alice-carousel'
-import { ArrowLeft, ArrowRight, Cards, Carousel, Col, Container, Wrapper } from './style'
-import 'react-alice-carousel/lib/alice-carousel.css';
-import house from '../../../assets/imgs/house.png'
-import apartment from '../../../assets/imgs/apartment.png'
-import office from '../../../assets/imgs/office.png'
-import villa from '../../../assets/imgs/villa.png'
 import { useQuery } from 'react-query';
 
 const {REACT_APP_BASE_URL: url} = process.env
 
 export const Categories = () => {
+    const slider = useRef();
     const [list, setList] = useState([])
 
     useQuery(
@@ -31,33 +27,42 @@ export const Categories = () => {
             }
         }
     )
-
-
-
     const items = [
-        <Col style={{backgroundImage: `url(${apartment})`, }}><Col.House /></Col>,
-        <Col style={{backgroundImage: `url(${apartment})`, }} ><Col.Apartment /></Col>,
-        <Col style={{backgroundImage: `url(${office})`, }} ><Col.Office /></Col>,
-        <Col style={{backgroundImage: `url(${villa})`, }} ><Col.Villa /></Col>,
-        <Col style={{backgroundImage: `url(${villa})`, }} ><Col.Villa /></Col>,
-        <Col style={{backgroundImage: `url(${villa})`, }} ><Col.Villa /></Col>,
-        <Col style={{backgroundImage: `url(${villa})`, }} ><Col.Villa /></Col>,
+        <Card mr={20} />,
+        <Card mr={20} />,
+        <Card mr={20} />,
+        <Card mr={20} />,
+        <Card mr={20} />,
+        <Card mr={20} />,
+        <Card mr={20} />,
+        <Card  />,
     ]
-    const slider = useRef();
+    
 
   return (
-    <Container>
-        <div className="title center nocopy">Recommended</div>
-        <div className="description center nocopy" >
-            Siz orzu qilgan, siz izlagan shinam va arzon uylar.
-        </div>
-        <Wrapper>
-            <Carousel>
-                <AliceCarousel ref={slider} autoWidth items={items} />
-                <ArrowLeft onClick={() => slider?.current?.Next()} />
-                <ArrowRight onClick={() => slider?.current?.Prev()} />
-            </Carousel>
-        </Wrapper>
+    <Container className='nocopy'>
+      <div className='title center'>Categories</div>
+      <div className='description center'>
+        Siz orzu qilgan, siz izlagan shinam va arzon uylar.
+      </div>
+      <Wrapper>
+        <Cards>
+          <AliceCarousel
+            // arrows={false}
+            ref={slider}
+            autoWidth
+            mouseTracking
+            items={items}
+            arrows={false}
+          />
+          <ArrowRight onClick={() => slider.current?.slidePrev()}>
+            &lang;
+          </ArrowRight>
+          <ArrowLeft onClick={() => slider.current?.slideNext()}>
+            &rang;
+          </ArrowLeft>
+        </Cards>
+      </Wrapper>
     </Container>
   )
 }

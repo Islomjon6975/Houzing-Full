@@ -2,6 +2,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 95px;
 `;
 
@@ -10,6 +11,7 @@ const Wrapper = styled('div')`
   justify-content: center;
   position: relative;
   width: 100%;
+  padding: 0 130px;
   
 `;
 const Cards = styled('div')`
@@ -18,6 +20,8 @@ const Cards = styled('div')`
   margin-top: 32px;
   justify-content: space-between;
   gap: 10px;
+  max-width: 1440px;
+  padding: 0 130px;
 `;
 
 const ArrowLeft = styled.div`
