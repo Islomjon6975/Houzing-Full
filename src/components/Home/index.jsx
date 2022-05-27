@@ -6,6 +6,7 @@ import { Recommended } from './Recomented'
 import Choose from './Choose'
 import { Categories } from './Categories'
 
+
 export const HomeComponent = () => {
   return (
     <Container>

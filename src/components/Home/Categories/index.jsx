@@ -1,36 +1,14 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import Card from '../../Card'
 import { ArrowLeft, ArrowRight, Cards, Col, ColItem, Container, Wrapper } from './style';
 import AliceCarousel from 'react-alice-carousel'
-import { useQuery } from 'react-query';
 import house from '../../../assets/imgs/villa.png'
 import apartment from '../../../assets/imgs/apartment.png'
 import office from '../../../assets/imgs/office.png'
 import villa from '../../../assets/imgs/villa.png'
 
-const {REACT_APP_BASE_URL: url} = process.env
-
 export const Categories = () => {
     const slider = useRef();
-    const [list, setList] = useState([])
-
-    useQuery(
-        '', 
-        () => {
-        return fetch(`${url}/v1/categories`, {
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-
-        }).then((res) => res.json())
-        },
-        {
-            onSuccess: (res) => {
-                console.log(res, 'res');
-                setList(res?.dataList?.[0] || [])
-            }
-        }
-    )
     const items = [
         // <Card mr={20} />,
         // <Card mr={20} />,
@@ -40,50 +18,50 @@ export const Categories = () => {
         // <Card mr={20} />,
         // <Card mr={20} />,
         // <Card  />,
-        <Col mr={20}>
-          <Col.Img src={house} />
-          <ColItem>
-            <ColItem.House />
-            <ColItem.Title>House</ColItem.Title>
-          </ColItem>
-        </Col>,
-        <Col mr={20}>
-          <Col.Img src={apartment} />
+        // <Col >
+        //   <Col.Img className="img-categories" src={house} />
+        //   <ColItem>
+        //     <ColItem.House />
+        //     <ColItem.Title>House</ColItem.Title>
+        //   </ColItem>
+        // </Col>,
+        <Col >
+          <Col.Img className="img-categories" src={apartment} />
           <ColItem>
             <ColItem.Apartment />
             <ColItem.Title>Apartment</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col mr={20}>
-          <Col.Img src={office} />
+        <Col >
+          <Col.Img className="img-categories" src={office} />
           <ColItem>
             <ColItem.Office />
             <ColItem.Title>Office</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col mr={20}>
-          <Col.Img src={villa} />
+        <Col >
+          <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.Villa />
             <ColItem.Title>Villa</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col mr={20}>
-          <Col.Img src={apartment} />
+        <Col >
+          <Col.Img className="img-categories" src={apartment} />
           <ColItem>
             <ColItem.House />
             <ColItem.Title>House</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col mr={20}>
-          <Col.Img src={villa} />
+        <Col >
+          <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.House />
             <ColItem.Title>House</ColItem.Title>
           </ColItem>
         </Col>,
-        <Col mr={20}>
-          <Col.Img src={villa} />
+        <Col >
+          <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.House />
             <ColItem.Title>House</ColItem.Title>
@@ -106,7 +84,6 @@ export const Categories = () => {
             autoWidth
             mouseTracking
             items={items}
-            arrows={false}
           />
           <ArrowRight onClick={() => slider.current?.slidePrev()}>
             &lang;

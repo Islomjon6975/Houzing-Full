@@ -123,11 +123,10 @@
         border: none;
         border-bottom: 2px solid #E6E9EC;
     }
-
-    .sc-jTYCaT{
+/* 
+    .alice-carousel{
         position: relative;
-
-    }
+    } */
 
     .alice-carousel__prev-btn{
         display: none;
@@ -137,3 +136,12 @@
     .alice-carousel__next-btn{
         display: none;
     }
+/* 
+    .alice-carousel__wrapper{
+        max-width: 1440px;
+    }
+
+    .alice-carousel__stage{
+        max-width: 1440px;
+
+    } */

@@ -9,6 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 95px;
+  margin-bottom: 55px;
 `;
 
 const Wrapper = styled('div')`
@@ -66,25 +67,31 @@ const ArrowRight = styled(ArrowLeft)`
   padding-right: 10px;
 `;
 
+
 const Col = styled.div`
   position: relative;
   display: flex;
-  max-width:320px;
+  justify-content: center;
+  align-items: center;
+  max-width:300px;
   min-width: 250px;
   height: 350px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(.jpg);
-  /* XXL */
-  margin-right: ${({mr}) => mr && `${mr}px`};
-
-
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  margin-right: 20px;
   box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06), 0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
   border-radius: 3px;
-  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+  overflow: hidden;
+  transition: all .6s ease;
+  :hover {
+    .img-categories{
+      transform: scale(1.1);
+    }
+  }
 `
 
 Col.Img = styled.img`
-  width:100%;
-  height: 350px;
+  width: 100%;
+  height: 100%;
 `
 
 const ColItem = styled.div`
@@ -120,4 +127,4 @@ ColItem.Villa = styled(villa)`
 
 `
 
-export { Container, Cards, Col, ColItem, ArrowLeft, Wrapper, ArrowRight };
+export { Container, Cards, ArrowLeft, Wrapper, ArrowRight, Col, ColItem };
