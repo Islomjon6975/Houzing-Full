@@ -74,14 +74,14 @@ const Col = styled.div`
   justify-content: center;
   align-items: center;
   max-width:300px;
-  min-width: 250px;
+  min-width: 280px;
   height: 350px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
   margin-right: 20px;
   box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06), 0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
   border-radius: 3px;
   overflow: hidden;
-  transition: all .6s ease;
+  transition: all .9s ease;
   :hover {
     .img-categories{
       transform: scale(1.1);

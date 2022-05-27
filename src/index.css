@@ -136,12 +136,13 @@
     .alice-carousel__next-btn{
         display: none;
     }
-/* 
-    .alice-carousel__wrapper{
+
+    /* .alice-carousel__wrapper{
         max-width: 1440px;
-    }
+    } */
 
     .alice-carousel__stage{
-        max-width: 1440px;
+        display: flex;
+        gap: 20px;
 
-    } */
+    }
