@@ -12,7 +12,7 @@ import { useQuery } from 'react-query';
 const {REACT_APP_BASE_URL: url} = process.env
 
 export const Categories = () => {
-
+    const [list, setList] = useState([])
 
     useQuery(
         '', 
@@ -27,6 +27,7 @@ export const Categories = () => {
         {
             onSuccess: (res) => {
                 console.log(res, 'res');
+                setList(res?.dataList?.[0] || [])
             }
         }
     )

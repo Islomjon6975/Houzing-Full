@@ -10,6 +10,7 @@ const Wrapper = styled('div')`
   justify-content: center;
   position: relative;
   width: 100%;
+  
 `;
 const Cards = styled('div')`
   display: flex;

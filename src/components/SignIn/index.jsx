@@ -45,6 +45,7 @@ export const SignIn = () => {
         },
         onError: (res) => {
           console.log(res, 'error');
+          
         }
       }
     )
