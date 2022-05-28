@@ -64,7 +64,14 @@ Advanced.Section = styled.div`
     margin-bottom: 20px;
 `
 
+const Select = styled.select`
+    height: 44px;
+    border: 1px solid #E6E9EC;
+    padding: 0 10px;
+    outline: none;
+`
 
 
-export { Container, Wrapper, Icon, Advanced};
+
+export { Container, Wrapper, Icon, Advanced, Select};
 
