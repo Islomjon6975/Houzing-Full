@@ -68,6 +68,7 @@ export const navbar = [
         path: '/properties/:id',
         element: <SelectedHouse />,
         search: '?',
+        useParams: true,
         hidden: true,
         private: false,
     },

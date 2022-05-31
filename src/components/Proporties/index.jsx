@@ -4,7 +4,7 @@ import { Select } from 'antd';
 import Card from '../Card';
 import { useQuery } from 'react-query';
 import { Button } from '../Generic';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useSearch from '../../hooks/useSearch';
 import { Cards, Container, CountWrapper, Wrapper } from './style'
 
@@ -15,6 +15,7 @@ export const ProportiesComponent = () => {
     const [data, setData] = useState([]);
     const { search } = useLocation();
     const query = useSearch();
+    const navigate = useNavigate();
 
 
     useQuery(
@@ -23,9 +24,13 @@ export const ProportiesComponent = () => {
             return fetch(`${url}/v1/houses/list${search}`)
                         .then((res) => res.json());
         }, {onSuccess: (res) => {
-            setData(res?.dataList[0] || [])
+            setData(res?.data || [])
         }}
     )
+
+    const onSelect = () => {
+        navigate('')
+    }
 
 
   return (
@@ -46,7 +51,7 @@ export const ProportiesComponent = () => {
             <Cards>
                 {
                     data?.map((value) => (
-                        <Card key={value?.id} info={value} />
+                        <Card onClick={onSelect} key={value?.id} info={value} />
                     ))
                 }
             </Cards>

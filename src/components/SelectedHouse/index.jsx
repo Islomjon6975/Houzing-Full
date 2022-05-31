@@ -1,8 +1,9 @@
 import React from 'react'
+import { Container } from './style';
 
 export const SelectedHouse = () => {
   return (
-    <div>SelectedHouse</div>
+    <Container>SelectedHouse</Container>
   )
 }
 

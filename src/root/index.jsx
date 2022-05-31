@@ -10,10 +10,19 @@ export const Root = () => {
     <>
       <Routes>
         <Route path='/' element={<Navigate to={'/home'} />} />
+
+        <Route>
+          {
+            navbar.map(({path, element, id, hidden, useParams}) => {
+              return !useParams && hidden && <Route key={id} path={path} element={element} />;
+            })
+          }
+        </Route>
+        
         <Route element={<Navbar />}>
-            {navbar.map((item) => (
-                <Route key={item.id} path={item.path} element={item.element} />
-              )
+            {navbar.map(({id, hidden, path, element, useParams}) => {
+                return (useParams || !hidden) &&  <Route key={id} path={path} element={element} />
+            }
             )}
         </Route>
         <Route path='*' element={<NotFound />} />
