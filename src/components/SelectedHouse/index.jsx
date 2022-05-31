@@ -22,11 +22,24 @@ export const SelectedHouse = () => {
         {
             onSuccess: (res) => {
                 setState(res?.data)
-            }
+            },
+            keepPreviousData: true, // bu browserdan tashqariga chiqib yana kirsa, yana yurishni oldini olish uchun
+            refetchOnWindowFocus: false, // bu ham focus bolgan vaqti malumot olib kelish
         })
 
     return (
-    <Container>{state?.address}</Container>
+    <Container>
+        <h1>{state?.address}</h1>
+        {
+            state?.attachments?.map((value) => {
+                return(
+                    <div key={value?.id}>
+                        <img src={value.imgPath} alt="" />
+                    </div>
+                )
+            })
+        }
+    </Container>
   )
 }
 

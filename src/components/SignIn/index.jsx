@@ -16,11 +16,11 @@ export const SignIn = () => {
 
 
     const onFinish = (values) => {
-      console.log('Success:', values);
+      // console.log('Success:', values);
     };
   
     const onFinishFailed = (errorInfo) => {
-      console.log('Failed:', errorInfo);
+      // console.log('Failed:', errorInfo);
     };
 
     // useQuery('', ()=>{})
@@ -36,15 +36,12 @@ export const SignIn = () => {
       },
       {
         onSuccess: (res) => {
-          console.log(res, 'res');
           localStorage.setItem('token', res?.authenticationToken)
-          console.log(res, 'token');
           if(res?.ok){
             navigate('/home')
           }
         },
         onError: (res) => {
-          console.log(res, 'error');
           
         }
       }
