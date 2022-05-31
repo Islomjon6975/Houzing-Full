@@ -28,9 +28,9 @@ export const ProportiesComponent = () => {
         }}
     )
 
-    const onSelect = () => {
-        navigate('')
-    }
+    const onSelect = (id) => {
+        navigate(`/properties/:${id}`);
+    };
 
 
   return (
@@ -51,7 +51,7 @@ export const ProportiesComponent = () => {
             <Cards>
                 {
                     data?.map((value) => (
-                        <Card onClick={onSelect} key={value?.id} info={value} />
+                        <Card onClick={() => onSelect(value?.id)} key={value?.id} info={value} />
                     ))
                 }
             </Cards>
