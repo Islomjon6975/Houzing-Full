@@ -1,13 +1,23 @@
 import React, { useState } from 'react'
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { Container } from './style';
+import { Container, Wrapper } from './style';
+
+import img1 from '../../assets/imgs/home1.png'
+import img2 from '../../assets/imgs/home2.png'
+import img3 from '../../assets/imgs/home1.png'
+import img4 from '../../assets/imgs/home1.png'
+import Images from './Images';
 
 const {REACT_APP_BASE_URL: url} = process.env;
  
 export const SelectedHouse = () => {
     const [state, setState] = useState();
     const { id } = useParams();
+
+    const [imgg, setImg] = [
+        img1, img2, img3, img4,
+    ]
 
     useQuery(
         'get data', 
@@ -29,16 +39,7 @@ export const SelectedHouse = () => {
 
     return (
     <Container>
-        <h1>{state?.address}</h1>
-        {
-            state?.attachments?.map((value) => {
-                return(
-                    <div key={value?.id}>
-                        <img src={value.imgPath} alt="" />
-                    </div>
-                )
-            })
-        }
+        <Images />
     </Container>
   )
 }
