@@ -120,4 +120,18 @@ const Imgg = styled.img`
     height: 400px;
 `
 
-export { Container, Wrapper, ImageContainer ,Left, Right, Cards, ArrowLeft, ArrowRight, Imgg}
+
+const ModalImage = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+`
+
+ModalImage.Img = styled.img`
+  width: 100%;
+  height: 400px;
+`
+
+export { Container, ModalImage, Wrapper, ImageContainer ,Left, Right, Cards, ArrowLeft, ArrowRight, Imgg}

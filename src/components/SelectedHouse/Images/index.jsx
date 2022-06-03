@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { ArrowLeft, ArrowRight, Cards, Container, ImageContainer, Imgg, Left, Right, Wrapper } from './style'
-import AliceCarousel from 'react-alice-carousel'
+import { ArrowLeft, ArrowRight, Cards, Container, ImageContainer, Imgg, Left, ModalImage, Right, Wrapper } from './style'
 
 import { Modal, Button } from 'antd';
 import img1 from '../../../assets/imgs/home1.png'
@@ -25,9 +24,7 @@ export const Images = () => {
 
     const slider = useRef();
     const items = [
-        <Imgg src={img1} />,
-        <Imgg src={img2} />,
-        <Imgg src={img3} />,
+
     ]
 
   return (
@@ -39,8 +36,8 @@ export const Images = () => {
                 </Left>
                 <Right>
                     <Right.Img src={img1} />
-                    <Right.Img src={img2} />
-                    <Right.Img src={img3} />
+                    <Right.Img src={img1} />
+                    <Right.Img src={img1} />
                     <Right.Count style ={{
                         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${img1})`,
                         backgroundRepeat: 'no-repeat',
@@ -52,21 +49,13 @@ export const Images = () => {
                 </Right>
             </ImageContainer>
             <Modal width={'1000px'} height title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                {/* <Cards> */}
-                    <AliceCarousel
-                        // arrows={false}
-                        ref={slider}
-                        autoWidth
-                        mouseTracking
-                        items={items}
-                    />
-                    <ArrowRight onClick={() => slider.current?.slidePrev()}>
-                        &lang;
-                    </ArrowRight>
-                    <ArrowLeft onClick={() => slider.current?.slideNext()}>
-                        &rang;
-                    </ArrowLeft>
-                {/* </Cards> */}
+                    <ModalImage>
+                        <ModalImage.Img src={img1} />
+                        <ModalImage.Img src={img1} />
+                        <ModalImage.Img src={img1} />
+                        <ModalImage.Img src={img1} />
+                        <ModalImage.Img src={img1} />
+                    </ModalImage>
             </Modal>
         </Wrapper>
     </Container>

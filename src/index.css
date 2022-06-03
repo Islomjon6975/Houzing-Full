@@ -146,3 +146,21 @@
         gap: 20px;
 
     }
+
+
+    .ant-modal-footer{
+        display: none;
+    }
+
+    .ant-modal-title{
+        display: none;
+    }
+
+    .ant-modal-header{
+        border: none;
+    }
+
+    .ant-modal-content{
+        height: 500px;
+        overflow: auto;
+    }
