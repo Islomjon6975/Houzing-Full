@@ -12,6 +12,7 @@ const {REACT_APP_BASE_URL:url} = process.env
 const { Option } = Select;
 
 export const ProportiesComponent = () => {
+    const [title, setTitle] = useState('Properties')
     const [data, setData] = useState([]);
     const { search } = useLocation();
     const query = useSearch();
@@ -32,12 +33,29 @@ export const ProportiesComponent = () => {
         navigate(`/properties/:${id}`);
     };
 
+    useQuery(
+        'getHouses',
+        () => {
+          return query.get('category_id') && fetch(`${url}/v1/categories/${query.get('category_id')}`, {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+          }).then((res) => res.json());
+        },
+        {
+          onSuccess: (res) => {
+            setTitle(res?.data?.name || 'Properties')
+          }
+        }
+      )
+
 
   return (
     <Container>
         <Settings />
         <Wrapper>
-            <div className="title">Proporties</div>
+            <div className="title">{title}</div>
             <div className="description">Siz orzu qilgan, siz izlagan shinam va arzon uylar.</div>
             <CountWrapper>
                 <div className="description">{data?.length || 0} results</div>

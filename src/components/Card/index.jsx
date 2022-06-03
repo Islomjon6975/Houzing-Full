@@ -10,7 +10,7 @@ export const Card = ({ info, mr, mb, bg, onClick }) => {
             <User>
                 <User.Img src={info?.attachments[0]?.imgPath || noimg} />
             </User>
-            <div className='subtitle' style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>{info?.description}</div>
+            <div className='subtitle' style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>{info?.description} Category: {info?.category?.name}</div>
             <div className="description"  style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>{info?.address}</div>
 
             <Info>

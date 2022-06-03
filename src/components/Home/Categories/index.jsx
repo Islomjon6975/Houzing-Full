@@ -81,7 +81,6 @@ export const Categories = () => {
       },
       {
         onSuccess: (res) => {
-          console.log(res, 'ressss');
           setList(res?.data || [])
         }
       }
