@@ -14,7 +14,7 @@ const Container = styled.div`
     border-radius: 3px;
     background-color: #FFFFFF;
     max-width: 380px;
-    min-width: 280px;
+    min-width: ${({width}) => width ? `${width}px` : '280px'};
     height: 430px;
     margin-right: ${({ mr }) => mr && `${mr}px`};
     margin-bottom: ${({ mb }) => mb && `${mb}px`};
