@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react'
-import Card from '../../Card'
 import { ArrowLeft, ArrowRight, Cards, Col, ColItem, Container, Wrapper } from './style';
 import AliceCarousel from 'react-alice-carousel'
-// import house from '../../../assets/imgs/villa.png'
 import cottage from '../../../assets/imgs/cottage.jpg'
 import apartment from '../../../assets/imgs/apartment.png'
 import office from '../../../assets/imgs/office.png'
@@ -84,16 +82,10 @@ export const Categories = () => {
       {
         onSuccess: (res) => {
           console.log(res, 'ressss');
-          // let response = res?.dataList?.[0]?.map((value) => (
-          //   <div>
-          //     <ColItem.Title>(value)</ColItem.Title>
-          //   </div>
-          // ))
-          setList(res?.dataList?.[0] || [])
+          setList(res?.data || [])
         }
       }
     )
-    console.log(list[0])
 
   return (
     <Container className='nocopy'>
