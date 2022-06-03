@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Settings from '../Filter'
 import { Select } from 'antd';
 import Card from '../Card';
@@ -17,6 +17,12 @@ export const ProportiesComponent = () => {
     const { search } = useLocation();
     const query = useSearch();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!query.get('category_id')){
+            setTitle('Proporties')
+        }
+    }, [query.get('category_id')])
 
 
     useQuery(
