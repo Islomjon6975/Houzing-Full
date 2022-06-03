@@ -36,26 +36,42 @@ export const ProportiesComponent = () => {
     useQuery(
         'getHouses',
         () => {
-          return query.get('category_id') && fetch(`${url}/v1/categories/${query.get('category_id')}`, {
+            return query.get('category_id') && fetch(`${url}/v1/categories/${query.get('category_id')}`, {
             method: 'GET',
             headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`
+                Authorization: `Bearer ${localStorage.getItem('token')}`
             },
-          }).then((res) => res.json());
+            }).then((res) => res.json());
         },
         {
-          onSuccess: (res) => {
+            onSuccess: (res) => {
             setTitle(res?.data?.name || 'Properties')
-          }
+            }
         }
-      )
+    );
+
+
+    
+    const {isLoading, isRefetching} = useQuery(
+        ['GetHouse'], 
+        () => {
+            return fetch(`${url}/v1/categories/${query.get('category_id')}`, {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }},)
+                        .then((res) => res.json());
+        }, {onSuccess: (res) => {
+            query.get('category_id') && setTitle(res?.data?.name || [])
+        }}
+    );
 
 
   return (
     <Container>
         <Settings />
         <Wrapper>
-            <div className="title">{title}</div>
+            <div className="title">{isLoading || isRefetching  ? <p>Loading...</p> : title}</div>
             <div className="description">Siz orzu qilgan, siz izlagan shinam va arzon uylar.</div>
             <CountWrapper>
                 <div className="description">{data?.length || 0} results</div>

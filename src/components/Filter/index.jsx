@@ -28,7 +28,7 @@ export const Settings = () => {
   useQuery(
     '',
     () => {
-      return fetch(`${url}/v1/categories/list`, {
+      return fetch(`${url}/v1/categories`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         },
