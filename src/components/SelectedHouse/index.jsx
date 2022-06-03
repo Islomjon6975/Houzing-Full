@@ -8,6 +8,7 @@ import img2 from '../../assets/imgs/home2.png'
 import img3 from '../../assets/imgs/home1.png'
 import img4 from '../../assets/imgs/home1.png'
 import Images from './Images';
+import LuxaryFamily from './LuxaryFamily';
 
 const {REACT_APP_BASE_URL: url} = process.env;
  
@@ -40,6 +41,7 @@ export const SelectedHouse = () => {
     return (
     <Container>
         <Images />
+        <LuxaryFamily />
     </Container>
   )
 }
