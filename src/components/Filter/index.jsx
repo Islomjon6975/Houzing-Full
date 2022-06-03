@@ -28,7 +28,7 @@ export const Settings = () => {
   useQuery(
     '',
     () => {
-      return fetch(`${url}/v1/categories`, {
+      return fetch(`${url}/v1/categories/list`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         },
@@ -36,7 +36,25 @@ export const Settings = () => {
     },
     {
       onSuccess: (res) => {
-        setList(res?.dataList?.[0] || [])
+        setList(res?.data || [])
+      }
+    }
+  )
+
+
+  useQuery(
+    'getHouses',
+    () => {
+      return fetch(`${url}/v1/categories/${query.get('category_id')}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
+      }).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        // setTitle(res?.data?.name || 'Properties')
       }
     }
   )
