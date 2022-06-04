@@ -147,7 +147,6 @@ Left.Download = styled.div`
 `
 
 Left.Line = styled.hr`
-    margin-bottom: 40px;
 `
 
 const Right = styled.div`
