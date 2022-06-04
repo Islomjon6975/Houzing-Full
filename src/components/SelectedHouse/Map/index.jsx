@@ -71,7 +71,7 @@ export const Map = () => {
             </Wrapper>
             <Wrapper>
                 <Subtitle>Area:</Subtitle>
-                <Description>Greenville</Description>
+                <Description></Description>
             </Wrapper>
         </Wrapper>
         <Wrapper mt={24} mb={24}>

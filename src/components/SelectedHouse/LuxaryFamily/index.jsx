@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Map from '../Map'
+import PropertyDetails from '../PropertyDetails';
 import { Container, Left, Right, Wrapper } from './style'
 
 
@@ -119,6 +120,9 @@ export const LuxaryFamily = () => {
                 <Left.Line />
                 {/* Map */}
                 <Map  />
+                <Left.Line />
+                {/* Property Details */}
+                <PropertyDetails />
             </Left>
             <Right>
 dssd

@@ -4,6 +4,7 @@ const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 48px;
     margin-bottom: 48px;
 `
 
@@ -14,17 +15,24 @@ const Title = styled.div`
     line-height: 28px;
     color: #0D263B;
     margin-bottom: 24px;
-    margin-top: 50px;
-
 `
 
 const Wrapper = styled.div`
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
-    margin-top: ${({mt}) => mt && `${mt}px`};
-    margin-bottom: ${({mb}) => mb && `${mb}px`};
-`;
+`
+
+Wrapper.Col = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+`
+
+Wrapper.Box = styled.div`
+    display: flex;
+    align-items: center;
+`
 
 const Subtitle = styled.div`
     font-style: normal;
@@ -32,15 +40,15 @@ const Subtitle = styled.div`
     font-size: 14px;
     line-height: 20px;
     color: #0D263B;
-    margin-right: 8px;
 `
 
-const Description = styled.div`
+const Desc = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #696969;
+    margin-right: 8px;
 `
 
-export { Container, Title, Wrapper, Subtitle, Description }
+export { Container, Title, Wrapper, Subtitle, Desc, }
