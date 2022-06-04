@@ -93,7 +93,24 @@ export const LuxaryFamily = () => {
                 <Left.ShowMore>Show More</Left.ShowMore>
                 {/* Documents */}
                 <Left.Subtitle>Documents</Left.Subtitle>
-
+                <Left.Wrapper mt={15} mb={50}>
+                    <Left.Wrapper>
+                        <Left.DownloadIcon />
+                        <Left.DownloadText>test_property.pdf</Left.DownloadText>
+                        <Left.Download>Download</Left.Download>
+                    </Left.Wrapper>
+                    <Left.Wrapper>
+                        <Left.DownloadIcon />
+                        <Left.DownloadText>test_property.pdf</Left.DownloadText>
+                        <Left.Download>Download</Left.Download>
+                    </Left.Wrapper>
+                    <Left.Wrapper>
+                        <Left.DownloadIcon />
+                        <Left.DownloadText>test_property.pdf</Left.DownloadText>
+                        <Left.Download>Download</Left.Download>
+                    </Left.Wrapper>
+                </Left.Wrapper>
+                <Left.Line />
             </Left>
             <Right>
 dssd

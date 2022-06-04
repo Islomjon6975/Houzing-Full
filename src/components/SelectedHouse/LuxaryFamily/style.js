@@ -6,6 +6,7 @@ import {ReactComponent as bath} from '../../../assets/icons/bath.svg'
 import {ReactComponent as garage} from '../../../assets/icons/car.svg'
 import {ReactComponent as ruler} from '../../../assets/icons/ruler.svg'
 import {ReactComponent as calendar} from '../../../assets/icons/calendar.svg'
+import {ReactComponent as download} from '../../../assets/icons/download.svg'
 
 const Container = styled.div`
     display: flex;
@@ -34,6 +35,7 @@ Left.Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-top: ${({mt}) => mt && `${mt}px`};
+    margin-bottom: ${({mb}) => mb && `${mb}px`};
 `;
 
 Left.Title = styled.div`
@@ -107,6 +109,7 @@ Left.Subtitle = styled.div`
     color: #0D263B;
     margin-bottom: 16ox;
     margin-top: 50px;
+
 `
 
 Left.ShowMore = styled.div`
@@ -116,6 +119,35 @@ Left.ShowMore = styled.div`
     line-height: 20px;
     text-decoration-line: underline;
     color: #0061DF;
+`
+
+Left.DownloadIcon = styled(download)`
+cursor: pointer;
+`
+Left.DownloadText = styled.div`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #696969;
+    margin: 0 18px 0 8px;
+    cursor: pointer;
+`
+
+Left.Download = styled.div`
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #0061DF;
+`
+
+Left.Line = styled.hr`
+    margin-bottom: 40px;
 `
 
 const Right = styled.div`
