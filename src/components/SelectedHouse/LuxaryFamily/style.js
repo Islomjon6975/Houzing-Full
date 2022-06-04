@@ -68,6 +68,7 @@ Left.Description = styled.div`
     line-height: 24px;
     color: #696969;
     margin-top: 8px;
+    margin-bottom: 20px;
 `;
 
 Left.SubDescription = styled.div`
@@ -97,6 +98,25 @@ Left.Text = styled.div`
     color: #696969;
     margin-left: 10px;
 `;
+
+Left.Subtitle = styled.div`
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #0D263B;
+    margin-bottom: 16ox;
+    margin-top: 50px;
+`
+
+Left.ShowMore = styled.div`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    color: #0061DF;
+`
 
 const Right = styled.div`
     width: 300px;

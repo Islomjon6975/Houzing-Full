@@ -74,7 +74,25 @@ export const LuxaryFamily = () => {
                     <Left.Text>Est. Mortgage</Left.Text>
 
                 </Left.Wrapper>
-
+                {/* Description */}
+                <Left.Subtitle>Description</Left.Subtitle>
+                <Left.Description>
+                    Occupying over 8,000 square feet, perched over 1,100 feet in the air with 
+                    breathtaking panoramic 360-degree views of all of New York City and the 
+                    surrounding tri-state area, The 82nd Floor at 432 Park Avenue has been completely
+                    reimagined by one of the most sought-after design houses in London and represents
+                    an utterly unique opportunity to own a grobally significant property.
+                </Left.Description>
+                <Left.Description>
+                    Occupying over 8,000 square feet, perched over 1,100 feet in the air with 
+                    breathtaking panoramic 360-degree views of all of New York City and the 
+                    surrounding tri-state area, The 82nd Floor at 432 Park Avenue has been completely
+                    reimagined by one of the most sought-after design houses in London and represents
+                    an utterly unique opportunity to own a grobally significant property.
+                </Left.Description>
+                <Left.ShowMore>Show More</Left.ShowMore>
+                {/* Documents */}
+                <Left.Subtitle>Documents</Left.Subtitle>
 
             </Left>
             <Right>
