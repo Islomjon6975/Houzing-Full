@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Features } from '../Features';
 import Map from '../Map'
+import Modal from '../Modal';
 import PropertyDetails from '../PropertyDetails';
 import Schedule from '../Schedule';
 import { Container, Left, Right, Wrapper } from './style'
@@ -130,9 +131,11 @@ export const LuxaryFamily = () => {
                 <Left.Line />
                 {/* Schedule */}
                 <Schedule />
+                <Left.Line />
+                {/* Schedule */}
             </Left>
             <Right>
-dssd
+                <Modal />
             </Right>
         </Wrapper>
     </Container>

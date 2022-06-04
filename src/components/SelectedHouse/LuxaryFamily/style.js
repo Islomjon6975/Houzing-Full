@@ -19,7 +19,6 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     display: flex;
-    align-items: center;
     max-width: 1440px;
     padding: 0 135px;
     width: 100%;
@@ -150,8 +149,7 @@ Left.Line = styled.hr`
 `
 
 const Right = styled.div`
-    width: 300px;
-    background-color: green;
+    width: 330px;
 `;
 
 export { Container, Wrapper, Left, Right }
