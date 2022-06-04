@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Map from '../Map'
 import { Container, Left, Right, Wrapper } from './style'
 
+
+
 export const LuxaryFamily = () => {
+
+    const [state, setState] = useState();
+
   return (
     <Container>
         <Wrapper>
@@ -113,7 +118,7 @@ export const LuxaryFamily = () => {
                 </Left.Wrapper>
                 <Left.Line />
                 {/* Map */}
-                <Map />
+                <Map  />
             </Left>
             <Right>
 dssd

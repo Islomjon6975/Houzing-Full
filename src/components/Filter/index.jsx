@@ -82,7 +82,6 @@ export const Settings = () => {
   navigate(`/properties`);
 
   }
-  console.log(state, 'state');
 
   const onSelect = ({target}) => {
     navigate(`${UseReplace('category_id', target?.value)}`);

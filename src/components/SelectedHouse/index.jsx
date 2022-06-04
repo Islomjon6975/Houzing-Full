@@ -41,7 +41,7 @@ export const SelectedHouse = () => {
     return (
     <Container>
         <Images />
-        <LuxaryFamily />
+        <LuxaryFamily  />
     </Container>
   )
 }
