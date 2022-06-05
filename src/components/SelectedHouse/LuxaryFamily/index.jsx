@@ -5,6 +5,7 @@ import Modal from '../Modal';
 import PropertyDetails from '../PropertyDetails';
 import Reviews from '../Reviews';
 import Schedule from '../Schedule';
+import WriteAReview from '../WriteAReview';
 import { Container, Left, Right, Wrapper } from './style'
 
 
@@ -135,6 +136,9 @@ export const LuxaryFamily = () => {
                 <Left.Line />
                 {/* Reviews */}
                 <Reviews />
+                <Left.Line />
+                {/* Write a Review */}
+                <WriteAReview />
             </Left>
             <Right>
                 <Modal />
