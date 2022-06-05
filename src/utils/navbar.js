@@ -42,6 +42,7 @@ export const navbar = [
         element: <SignIn />,
         search: '?',
         hidden: true,
+        useParams: true,
         private: false,
     },
     {
@@ -51,6 +52,7 @@ export const navbar = [
         element: <Register />,
         search: '?',
         hidden: true,
+        useParams: true,
         private: false,
     },
     {

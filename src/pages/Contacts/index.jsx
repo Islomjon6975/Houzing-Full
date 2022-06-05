@@ -1,8 +1,9 @@
 import React from 'react'
+import { Container } from './style'
 
 export const Contacts = () => {
   return (
-    <div>Contacts</div>
+    <Container>Contacts coming soon...</Container>
   )
 }
 
