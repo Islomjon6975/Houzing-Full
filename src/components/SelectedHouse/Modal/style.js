@@ -22,6 +22,7 @@ const Img = styled.img`
     height: 52px;
     border-radius: 50%;
     margin-right: 8px;
+    cursor: pointer;
 `
 
 const Title = styled.div`
