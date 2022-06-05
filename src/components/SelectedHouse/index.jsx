@@ -9,6 +9,7 @@ import img3 from '../../assets/imgs/home1.png'
 import img4 from '../../assets/imgs/home1.png'
 import Images from './Images';
 import LuxaryFamily from './LuxaryFamily';
+import SimilarListing from './SimilarListing';
 
 const {REACT_APP_BASE_URL: url} = process.env;
  
@@ -42,6 +43,7 @@ export const SelectedHouse = () => {
     <Container>
         <Images />
         <LuxaryFamily  />
+        <SimilarListing />
     </Container>
   )
 }
