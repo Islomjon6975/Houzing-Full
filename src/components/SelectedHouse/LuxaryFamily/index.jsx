@@ -3,6 +3,7 @@ import { Features } from '../Features';
 import Map from '../Map'
 import Modal from '../Modal';
 import PropertyDetails from '../PropertyDetails';
+import Reviews from '../Reviews';
 import Schedule from '../Schedule';
 import { Container, Left, Right, Wrapper } from './style'
 
@@ -132,7 +133,8 @@ export const LuxaryFamily = () => {
                 {/* Schedule */}
                 <Schedule />
                 <Left.Line />
-                {/* Schedule */}
+                {/* Reviews */}
+                <Reviews />
             </Left>
             <Right>
                 <Modal />
