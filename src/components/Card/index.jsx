@@ -1,6 +1,9 @@
 import React from 'react'
 import { Container, Img, Info, InfoWrapper, Icons, Footer, User } from './style'
 import noimg from '../../assets/imgs/noimage.png'
+import user from '../../assets/imgs/costumer.jpg'
+
+
 
 export const Card = ({ info, mr, mb, width, bg, onClick }) => {
   return (
@@ -8,7 +11,7 @@ export const Card = ({ info, mr, mb, width, bg, onClick }) => {
         <Img src={info?.attachments[0]?.imgPath || noimg} />
         <InfoWrapper>
             <User>
-                <User.Img src={info?.attachments[0]?.imgPath || noimg} />
+                <User.Img src={ user || noimg} /> {/*info?.attachments[0]?.imgPath */}
             </User>
             <div className='subtitle' style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>{info?.description} Category: {info?.category?.name}</div>
             <div className="description"  style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>{info?.address}</div>

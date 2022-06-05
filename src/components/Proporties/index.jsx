@@ -7,6 +7,7 @@ import { Button } from '../Generic';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useSearch from '../../hooks/useSearch';
 import { Cards, Container, CountWrapper, Wrapper } from './style'
+import user from '../../assets/imgs/costumer.jpg'
 
 const {REACT_APP_BASE_URL:url} = process.env
 const { Option } = Select;

@@ -20,7 +20,7 @@ const Cards = styled('div')`
   width: 1440px;
   margin-top: 32px;
   justify-content: space-between;
-  gap: 10px;
+  gap: 20px;
   max-width: 1440px;
   padding: 0 130px;
 `;

@@ -6,14 +6,14 @@ import AliceCarousel from 'react-alice-carousel'
 export const Recommended = () => {
     const slider = useRef();
     const items = [
-        <Card mr={20} />,
-        <Card mr={20} />,
-        <Card mr={20} />,
-        <Card mr={20} />,
-        <Card mr={20} />,
-        <Card mr={20} />,
-        <Card mr={20} />,
-        <Card  />,
+        <Card width={381} mr={50} />,
+        <Card width={381} mr={50} />,
+        <Card width={381} mr={50} />,
+        <Card width={381} mr={50} />,
+        <Card width={381} mr={50} />,
+        <Card width={381} mr={50} />,
+        <Card width={381} mr={50} />,
+        <Card width={381}  />,
     ]
     
 
