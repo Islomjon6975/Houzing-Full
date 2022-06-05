@@ -19,7 +19,7 @@ export const SimilarListing = () => {
 
   return (
     <Container>
-        <Wrapper>
+        {/* <Wrapper> */}
             <Title>Similar listings</Title>
             <Subtitle>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</Subtitle>
             <SubWrapper>
@@ -39,7 +39,7 @@ export const SimilarListing = () => {
                     </ArrowLeft>
                 </Cards>
             </SubWrapper>
-        </Wrapper>
+        {/* </Wrapper> */}
     </Container>
   )
 }

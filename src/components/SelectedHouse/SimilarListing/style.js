@@ -47,7 +47,7 @@ const SubWrapper = styled('div')`
   position: relative;
   width: 100%;
   padding: 0 130px;
-  width: 1440px;
+  /* width: 1440px; */
 `;
 
 const Cards = styled('div')`
