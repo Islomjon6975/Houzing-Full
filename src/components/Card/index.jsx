@@ -2,10 +2,13 @@ import React from 'react'
 import { Container, Img, Info, InfoWrapper, Icons, Footer, User } from './style'
 import noimg from '../../assets/imgs/noimage.png'
 import user from '../../assets/imgs/costumer.jpg'
+import { useNavigate } from 'react-router-dom'
+
 
 
 
 export const Card = ({ info, mr, mb, width, bg, onClick }) => {
+    const navigate = useNavigate()
   return (
     <Container width={width} mr={mr} mb={mb} onClick={onClick}>
         <Img src={info?.attachments[0]?.imgPath || noimg} />
@@ -45,7 +48,7 @@ export const Card = ({ info, mr, mb, width, bg, onClick }) => {
             <Info.Detail className='endToRight'>
                 <div className='center'>
                     <Icons.Resize />
-                    <Icons.Love bg={bg} />
+                    <Icons.Love onClick={()=> navigate('/favourite')} bg={bg} />
                 </div>
             </Info.Detail>
         </Footer>

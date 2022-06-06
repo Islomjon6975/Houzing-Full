@@ -62,6 +62,7 @@ export const navbar = [
         element: <Favourite />,
         search: '?',
         hidden: true,
+        useParams: true,
         private: false,
     },
     {

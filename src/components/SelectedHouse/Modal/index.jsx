@@ -27,7 +27,7 @@ export const Modal = () => {
             </Message>
         </Wrapper>
         <Wrapper mt={24} top>
-            <Checkbox />
+            <Checkbox type='checkbox' />
             <Desc>By submitting this form I agree to Terms of Use</Desc>
         </Wrapper>
         <Wrapper mt={24}>

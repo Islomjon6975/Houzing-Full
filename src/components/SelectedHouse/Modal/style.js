@@ -60,8 +60,8 @@ const Message = styled.textarea`
 `
 
 const Checkbox = styled.input`
-    width: 18px;
-    height: 18px;
+    width: 38px;
+    height: 38px;
     background: #FFFFFF;
     border: 2px solid #E6E9EC;
     margin-right: 8px;
