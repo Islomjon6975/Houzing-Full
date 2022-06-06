@@ -100,7 +100,7 @@ export const ProportiesComponent = () => {
         </Wrapper>
     </Container>
   )
-}
+};
 
 export default ProportiesComponent
 
