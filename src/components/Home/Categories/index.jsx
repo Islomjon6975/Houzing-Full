@@ -17,6 +17,7 @@ export const Categories = () => {
     const goto = (id) => {
       navigate(`/properties?category_id=${id}`)
     }
+
     const items = [
       <Col onClick={() => goto(1)} >
         <Col.Img className="img-categories" src={cottage} />
