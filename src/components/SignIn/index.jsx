@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Button, Input } from '../Generic';
-import { Container, Formm, InputPassword, Inputt, Wrapper, Title, Checkboxx, Section, Forgot } from './style'
-import { notification } from 'antd';
-import { useMutation, useQuery } from 'react-query';
+import { Container, Formm, Wrapper, Title, Checkboxx, Section, Forgot } from './style'
+import { useMutation } from 'react-query';
 
 const {REACT_APP_BASE_URL:url} = process.env
 
@@ -34,7 +33,11 @@ export const SignIn = () => {
           }
         }).then((res) => res.json())
       },
-      {
+      
+    )
+
+    const onSubmit = () => {
+      mutate({}, {
         onSuccess: (res) => {
           localStorage.setItem('token', res?.authenticationToken)
           if(res?.ok){
@@ -44,11 +47,7 @@ export const SignIn = () => {
         onError: (res) => {
           
         }
-      }
-    )
-
-    const onSubmit = () => {
-      mutate();
+      });
       
       // notification[]({
       //     message: '',
