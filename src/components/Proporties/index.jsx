@@ -52,7 +52,7 @@ export const ProportiesComponent = () => {
         },
         {
             onSuccess: (res) => {
-            setTitle(res?.data?.name || 'Properties')
+            setTitle(res?.data?.name || 'Properties');
             }
         }
     );

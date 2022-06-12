@@ -24,11 +24,11 @@ export const Settings = () => {
   const navigate = useNavigate();
   const [list, setList] = useState([])
   
-
+  console.log(list, 'listttt')
   useQuery(
     '',
     () => {
-      return fetch(`${url}/v1/categories`, {
+      return fetch(`${url}/v1/categories/list`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         },
@@ -108,9 +108,9 @@ export const Settings = () => {
         <Input placeholder={'Max price'} value={state.maxPrice} onChange={onChange} name='max_price' />
         <Select defaultValue={query.get('category_id')} onChange={onSelect}>
           {
-            list.map((item, index) => {
+            list.map((item) => {
               return (
-                <option key={item} value={index + 1}>{item}</option>
+                <option key={item?.id} value={item?.id}>{item?.name}</option>
               )
             })
           }

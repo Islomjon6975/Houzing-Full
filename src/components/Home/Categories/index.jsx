@@ -23,49 +23,49 @@ export const Categories = () => {
         <Col.Img className="img-categories" src={cottage} />
         <ColItem>
           <ColItem.Apartment />
-          <ColItem.Title>{list[0]}</ColItem.Title>
+          <ColItem.Title>{list[0]?.name}</ColItem.Title>
         </ColItem>
       </Col>,
         <Col onClick={() => goto(2)}>
           <Col.Img className="img-categories" src={apartment} />
           <ColItem>
             <ColItem.Apartment />
-            <ColItem.Title>{list[1]}</ColItem.Title>
+            <ColItem.Title>{list[1]?.name}</ColItem.Title>
           </ColItem>
         </Col>,
         <Col onClick={() => goto(3)}>
           <Col.Img className="img-categories" src={office} />
           <ColItem>
             <ColItem.Office />
-            <ColItem.Title>{list[2]}</ColItem.Title>
+            <ColItem.Title>{list[2]?.name}</ColItem.Title>
           </ColItem>
         </Col>,
         <Col onClick={() => goto(4)}>
           <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.Villa />
-            <ColItem.Title>{list[3]}</ColItem.Title>
+            <ColItem.Title>{list[3]?.name}</ColItem.Title>
           </ColItem>
         </Col>,
         <Col onClick={() => goto(5)}>
           <Col.Img className="img-categories" src={apartment} />
           <ColItem>
             <ColItem.House />
-            <ColItem.Title>{list[3]}</ColItem.Title>
+            <ColItem.Title>{list[3]?.name}</ColItem.Title>
           </ColItem>
         </Col>,
         <Col onClick={() => goto(6)}>
           <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.House />
-            <ColItem.Title>{list[6]}</ColItem.Title>
+            <ColItem.Title>{list[6]?.name}</ColItem.Title>
           </ColItem>
         </Col>,
         <Col onClick={() => goto(7)}>
           <Col.Img className="img-categories" src={villa} />
           <ColItem>
             <ColItem.House />
-            <ColItem.Title>{list[7]}</ColItem.Title>
+            <ColItem.Title>{list[7]?.name}</ColItem.Title>
           </ColItem>
         </Col>,
     ]
@@ -74,7 +74,7 @@ export const Categories = () => {
     useQuery(
       '',
       () => {
-        return fetch(`${url}/v1/categories`, {
+        return fetch(`${url}/v1/categories/list`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           },
