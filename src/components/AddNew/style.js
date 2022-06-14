@@ -32,9 +32,10 @@ const Box = styled.div`
     border: 1px solid #E6E9EC;
     box-shadow: 0px 10px 30px rgba(13, 38, 59, 0.05);
     border-radius: 3px;
-    padding: 24px 30px;
+    padding: 30px 30px;
     display: flex;
     flex-direction: column;
+    gap: 23px;
 `
 
 const Subtitle = styled.div`
@@ -43,7 +44,6 @@ const Subtitle = styled.div`
     font-size: 18px;
     line-height: 28px;
     color: #0D263B;
-    margin-bottom: 44px;
 `
 
 Box.Wrappar = styled.div`
@@ -53,4 +53,43 @@ Box.Wrappar = styled.div`
     margin-bottom: 90px;
 `
 
-export { Container, Wrapper, Title, Box, Subtitle}
+Box.Inputs = styled.div`
+    display: flex;
+    gap: 20px;
+`
+
+Box.Message = styled.textarea`
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: 1px solid #E6E9EC;
+    outline: none;
+    padding: 15px;
+`
+
+const Description = styled.div`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #696969;
+`
+
+Box.Images = styled.div`
+    width: 150px;
+    height: 150px;
+    background: #C4C4C4;
+    border-radius: 3px;
+`
+
+Box.Uploads = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+`
+
+Box.Table = styled.table`
+    height: 300px;
+`
+
+export { Container, Wrapper, Title, Box, Subtitle, Description}
