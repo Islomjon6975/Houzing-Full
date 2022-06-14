@@ -56,6 +56,7 @@ export const Card = ({ info, mr, mb, width, bg, onClick }) => {
   )
 }
 
-export default Card
+export default Card;
+
 
 

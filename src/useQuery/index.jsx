@@ -19,6 +19,7 @@ export const Query = () => {
                 console.log(res, 'ressssssssssssssssssss')
             }
         } )
+
     }
     
   return (
