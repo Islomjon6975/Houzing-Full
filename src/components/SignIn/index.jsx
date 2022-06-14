@@ -40,9 +40,10 @@ export const SignIn = () => {
       mutate({}, {
         onSuccess: (res) => {
           localStorage.setItem('token', res?.authenticationToken)
-          if(res?.ok){
-            navigate('/home')
+          if(res?.authenticationToken){
+            navigate('/myproperties')
           }
+          console.log(res, 'resssssssssssssssssssssssssss')
         },
         onError: (res) => {
           

@@ -58,7 +58,15 @@ export const Navbar = () => {
                     }
                 </NavbarBody>
                 <Span>
-                    <Button class='loginn' onClick={() => navigate('/signin')} width={'120px'}>Login</Button>
+                    {
+                        localStorage.getItem('token') ? (
+                            <Button onClick={() => {
+                                localStorage.clear();
+                                navigate("/home")}} width={'120px'} >Log out</Button>
+                        ) : (
+                            <Button class='loginn' onClick={() => navigate('/signin')} width={'120px'}>Login</Button>
+                        )
+                    }
                 </Span>
                 <User />
             </NavbarWrapper>

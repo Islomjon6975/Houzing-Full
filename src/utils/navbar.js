@@ -5,6 +5,8 @@ import Register from '../components/Register';
 import { SignIn } from '../components/SignIn';
 import { Favourite } from '../pages/Favourite';
 import SelectedHouse from '../pages/SelectedHouse';
+import MyProperties from '../components/MyProperties';
+import AddNew from '../components/AddNew';
 
 
 export const navbar = [
@@ -70,6 +72,26 @@ export const navbar = [
         title: 'Selected House',
         path: '/properties/:id',
         element: <SelectedHouse />,
+        search: '?',
+        useParams: true,
+        hidden: true,
+        private: false,
+    },
+    {
+        id: 8,
+        title: 'My Properties',
+        path: '/myproperties',
+        element: <MyProperties />,
+        search: '?',
+        useParams: true,
+        hidden: true,
+        private: false,
+    },
+    {
+        id: 9,
+        title: 'Add New',
+        path: '/properties/addnew',
+        element: <AddNew />,
         search: '?',
         useParams: true,
         hidden: true,
