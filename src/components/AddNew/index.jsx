@@ -6,10 +6,17 @@ import { Box, Container, Description, Subtitle, Title, Wrapper } from './style'
 import { useState } from 'react';
 import { Upload } from 'antd';
 import Checkbox from '../Generic/Checkbox';
+import { useHttp } from '../../hooks/useHttps';
+import { useMutation } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 
 export const AddNew = () => {
-
-    const [state, setState] = useState({});
+    const navigate = useNavigate()
+    const { request } = useHttp()
+    const [center, setCenter] = useState({
+        lat: 41.311081,
+        lng:  69.240562,
+    })
 
 
     const containerStyle = {
@@ -17,10 +24,10 @@ export const AddNew = () => {
         height: '600px'
     };
     
-    const center = {
-        lat: 41.311081,
-        lng:  69.240562,
-    };
+    // const center = {
+    //     lat: 41.311081,
+    //     lng:  69.240562,
+    // };
     
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -56,11 +63,82 @@ export const AddNew = () => {
       }, [])
 
       const onMapClick = (e) => {
-        console.log(e?.latLng?.lat(), 'lat');
-        console.log(e?.latLng?.lng(), 'lng');
+        // console.log(e?.latLng?.lat(), 'lat');
+        // console.log(e?.latLng?.lng(), 'lng');
+        setCenter({
+            lat: e?.latLng?.lat(),
+            lng: e?.latLng?.lng()
+        })
       }
-    
 
+      const {mutate} = useMutation(() => request({
+        url: '/v1/houses', 
+        method: 'POST', 
+        token: true,
+        body : {
+            "address": "string",
+            "attachments": [
+              {
+                "imgPath": "https://static.ngs.ru/news/99/preview/20ff64d4a539a0b4c37c733164f27a850068ccff_1100.jpg"
+              }
+            ],
+            "categoryId": 0,
+            "city": "Earth",
+            "componentsDto": {
+              "additional": "string",
+              "airCondition": true,
+              "courtyard": true,
+              "furniture": true,
+              "gasStove": true,
+              "internet": true,
+              "tv": true
+            },
+            "country": "Uzbekistan",
+            "description": "uynilar jadvali  iiii",
+            "favorite": true,
+            "homeAmenitiesDto": {
+              "additional": "string",
+              "busStop": true,
+              "garden": true,
+              "market": true,
+              "park": true,
+              "parking": true,
+              "school": true,
+              "stadium": true,
+              "subway": true,
+              "superMarket": true
+            },
+            "houseDetails": {
+              "area": 10,
+              "bath": 20,
+              "beds": 30,
+              "garage": 20,
+              "room": 10,
+              "yearBuilt": 2022
+            },
+            "locations": {
+              "latitude": center?.lat,
+              "longitude": center?.lng,
+            },
+            "name": "string",
+            "price": 0,
+            "region": "Tashkent city",
+            "salePrice": 0,
+            "status": true,
+            "zipCode": "123456"
+          },
+    }))
+    
+    const onSubmit = () => {
+    mutate('', {
+        onSuccess: (res) => {
+            console.log(res);
+            if(res?.success){
+                navigate('/myproperties');
+            }
+        }
+    });
+    };
   return (
     <Container>
         <Wrapper>
@@ -109,12 +187,12 @@ export const AddNew = () => {
                         <GoogleMap
                           mapContainerStyle={containerStyle}
                           center={center}
-                          zoom={10}
+                          zoom={15}
                           onLoad={onLoad}
                           onUnmount={onUnmount}
                           onClick={onMapClick}
                         >
-                          { /* Child components, such as markers, info windows, etc. */ }
+                          <Marker position={center} />
                           <></>
                         </GoogleMap>
                     ) : <></>
@@ -260,7 +338,7 @@ export const AddNew = () => {
                 </Box.Inputs>
             </Box>
             <Box.Wrappar>
-                <Button size='large'  width={'280px'} type='primary'>Submit</Button>
+                <Button onClick={onSubmit} size='large'  width={'280px'} type='primary'>Submit</Button>
             </Box.Wrappar>
         </Wrapper>
     </Container>

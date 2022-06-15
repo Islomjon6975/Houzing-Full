@@ -15,11 +15,16 @@ export const MyProperties = () => {
 
     useQuery(
         'getMyProperties',
-        (res) => {
-            return request({url: '/v1/houses/me', token: true})
+        () => {
+            // return request({url: '/v1/houses/me', token: true})
+            return fetch(`${url}/v1/houses/me`,{
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            }).then(res => res.json())
         }, 
         {
-            onSuccuss: (res) => setState(res?.data || [])
+            onSuccuss: (res) =>console.log(res, 'res')
         }
     )
 
