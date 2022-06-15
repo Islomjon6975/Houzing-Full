@@ -1,11 +1,10 @@
 import React from 'react'
-// import Button from '../Generic/Button'
+import Button from '../Generic/Button'
 import Input from '../Generic/Input'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import { Box, Container, Description, Subtitle, Title, Wrapper } from './style'
 import { useState } from 'react';
-import { UploadOutlined } from '@ant-design/icons';
-import { Button, Upload } from 'antd';
+import { Upload } from 'antd';
 import Checkbox from '../Generic/Checkbox';
 
 export const AddNew = () => {
@@ -54,48 +53,31 @@ export const AddNew = () => {
             <Box>
                 <Subtitle>Contact information</Subtitle>
                 <Box.Inputs>
-                    <Input placeholder='Property title*' />
-                    <Input placeholder='Type' />
+                    <Input placeholder='Property title' />
+                    <Input placeholder='Category' />
                 </Box.Inputs>
                 <Box.Inputs>
-                    <Box.Message placeholder='Property Description*'></Box.Message>
+                    <Box.Message placeholder='Property Description'></Box.Message>
                 </Box.Inputs>
             </Box>
             <Box>
                 <Subtitle>Additional</Subtitle>
                 <Box.Inputs>
-                    <Input placeholder='Property ID' />
-                    <Input placeholder='Parent property' />
-                    <Input placeholder='Status' />
-                </Box.Inputs>
-                <Box.Inputs>
-                    <Input placeholder='Label' />
-                    <Input placeholder='Material' />
                     <Input placeholder='Rooms' />
-                </Box.Inputs>
-                <Box.Inputs>
                     <Input placeholder='Beds' />
                     <Input placeholder='Baths' />
-                    <Input placeholder='Garages' />
                 </Box.Inputs>
                 <Box.Inputs>
+                    <Input placeholder='Garages' />
                     <Input placeholder='Year bulid' />
                     <Input placeholder='Home area (sqft)' />
-                    <Input placeholder='Lot dimensions' />
-                </Box.Inputs>
-                <Box.Inputs>
-                    <Input placeholder='Lot area (sqft)' />
                 </Box.Inputs>
             </Box>
             <Box>
                 <Subtitle>Price</Subtitle>
                 <Box.Inputs>
-                    <Input placeholder='Price ($)' />
-                    <Input placeholder='Price Prefix' />
-                </Box.Inputs>
-                <Box.Inputs>
-                    <Input placeholder='Price Suffix' />
-                    <Input placeholder='Price Custom' />
+                    <Input placeholder='Price' />
+                    <Input placeholder='Sale Price' />
                 </Box.Inputs>
             </Box>
             <Box>
@@ -104,9 +86,9 @@ export const AddNew = () => {
                     <Input placeholder='Regions' />
                     <Input placeholder='Friendly address' />
                 </Box.Inputs>
-                <Box.Inputs>
+                {/* <Box.Inputs>
                     <Input placeholder='Map location' />
-                </Box.Inputs>
+                </Box.Inputs> */}
                 {
                     isLoaded ? (
                         <GoogleMap
@@ -153,21 +135,21 @@ export const AddNew = () => {
                         <Box.Images />
                     </Box.Inputs>
                     <Upload {...props}>
-                        <Button size='large'>Upload</Button>
+                        <Button type='secondary' width={'100px'} >Upload</Button>
                     </Upload>
                 </Box.Uploads>
 
                 <Box.Uploads>
                     <Description>Gallery</Description>
                     <Upload {...props}>
-                        <Button size='large'>Upload</Button>
+                        <Button type='secondary' width={'100px'}>Upload</Button>
                     </Upload>
                 </Box.Uploads>
                 
                 <Box.Uploads>
                     <Description>Attachment</Description>
                     <Upload {...props}>
-                        <Button size='large'>Upload</Button>
+                        <Button type='secondary' width={'100px'}>Upload</Button>
                     </Upload>
                 </Box.Uploads>
                 <Box.Inputs>

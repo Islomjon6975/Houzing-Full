@@ -76,7 +76,7 @@ export const SignIn = () => {
                 >
                 <Title>Sign in</Title>
                 <Input onChange={({target}) => setEmail(target?.value)} value={email} mb={20} width='100%' placeholder='User name' />
-                <Input onChange={({target}) => setPassword(target?.value)} value={password} placeholder='Password' />
+                <Input type='password' onChange={({target}) => setPassword(target?.value)} value={password} placeholder='Password' />
                 <Section>
                     <Checkboxx>Remember me</Checkboxx>
                     <Forgot>Forgot</Forgot>
