@@ -24,11 +24,10 @@ export const MyProperties = () => {
             }).then(res => res.json())
         }, 
         {
-            onSuccuss: (res) =>console.log(res, 'res')
+            onSuccess: (res) => {setState(res?.data || [])}
         }
     )
 
-    // console.log(state, 'my properties')
 
   return (
     <Container>
@@ -55,107 +54,47 @@ export const MyProperties = () => {
                         <Subtitle last>Action</Subtitle>
                     </Box.Wrapper>
                 </Box.Container>
-                <Box.Container>
-                    <Box.Wrapper>
-                        <Image>
-                            <Image.Button>Featured</Image.Button>
-                            <Image.Img />
-                        </Image>
-                        <TexContainer>
-                            <TexContainer.Title>New Apartment Nice Wiew <TexContainer.Sale>FOR SALE</TexContainer.Sale></TexContainer.Title>
-                            <TexContainer.Desc>Quincy St, Brooklyn, NY, USA</TexContainer.Desc>
-                            <TexContainer.DeletedPrice>$2,800/mo</TexContainer.DeletedPrice>
-                            <TexContainer.Price>$7,500/mo</TexContainer.Price>
-                        </TexContainer>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>30 December 2022</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>Pending</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>5933</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <Icons>
-                            <Icons.Wrapper>
-                                <Icons.Edit />
-                            </Icons.Wrapper>
-                            <Icons.Wrapper>
-                                <Icons.Trash />
-                            </Icons.Wrapper>
-                        </Icons>
-                    </Box.Wrapper>
-                </Box.Container>
                 
-                <Box.Container>
-                    <Box.Wrapper>
-                        <Image>
-                            <Image.Button>Featured</Image.Button>
-                            <Image.Img />
-                        </Image>
-                        <TexContainer>
-                            <TexContainer.Title>New Apartment Nice Wiew <TexContainer.Sale>FOR SALE</TexContainer.Sale></TexContainer.Title>
-                            <TexContainer.Desc>Quincy St, Brooklyn, NY, USA</TexContainer.Desc>
-                            <TexContainer.DeletedPrice>$2,800/mo</TexContainer.DeletedPrice>
-                            <TexContainer.Price>$7,500/mo</TexContainer.Price>
-                        </TexContainer>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>30 December 2022</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>Pending</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>5933</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <Icons>
-                            <Icons.Wrapper>
-                                <Icons.Edit />
-                            </Icons.Wrapper>
-                            <Icons.Wrapper>
-                                <Icons.Trash />
-                            </Icons.Wrapper>
-                        </Icons>
-                    </Box.Wrapper>
-                </Box.Container>
                 
-                <Box.Container>
-                    <Box.Wrapper>
-                        <Image>
-                            <Image.Button>Featured</Image.Button>
-                            <Image.Img />
-                        </Image>
-                        <TexContainer>
-                            <TexContainer.Title>New Apartment Nice Wiew <TexContainer.Sale>FOR SALE</TexContainer.Sale></TexContainer.Title>
-                            <TexContainer.Desc>Quincy St, Brooklyn, NY, USA</TexContainer.Desc>
-                            <TexContainer.DeletedPrice>$2,800/mo</TexContainer.DeletedPrice>
-                            <TexContainer.Price>$7,500/mo</TexContainer.Price>
-                        </TexContainer>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>30 December 2022</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>Pending</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <TexContainer.Status>5933</TexContainer.Status>
-                    </Box.Wrapper>
-                    <Box.Wrapper>
-                        <Icons>
-                            <Icons.Wrapper>
-                                <Icons.Edit />
-                            </Icons.Wrapper>
-                            <Icons.Wrapper>
-                                <Icons.Trash />
-                            </Icons.Wrapper>
-                        </Icons>
-                    </Box.Wrapper>
-                </Box.Container>
+                {
+                    state?.map((data) => {
+                        return(
+                            <Box.Container key={data.id}>
+                                <Box.Wrapper>
+                                    <Image>
+                                        <Image.Button>Featured</Image.Button>
+                                        <Image.Img src={data?.attachments[0]?.imgPath} />
+                                    </Image>
+                                    <TexContainer>
+                                        <TexContainer.Title>{data?.region} <TexContainer.Sale>FOR SALE</TexContainer.Sale></TexContainer.Title>
+                                        <TexContainer.Desc>{data?.description}</TexContainer.Desc>
+                                        <TexContainer.DeletedPrice>$2,800/mo</TexContainer.DeletedPrice>
+                                        <TexContainer.Price>$7,500/mo</TexContainer.Price>
+                                    </TexContainer>
+                                </Box.Wrapper>
+                                <Box.Wrapper>
+                                    <TexContainer.Status>30 December 2022</TexContainer.Status>
+                                </Box.Wrapper>
+                                <Box.Wrapper>
+                                    <TexContainer.Status>Pending</TexContainer.Status>
+                                </Box.Wrapper>
+                                <Box.Wrapper>
+                                    <TexContainer.Status>5933</TexContainer.Status>
+                                </Box.Wrapper>
+                                <Box.Wrapper>
+                                    <Icons>
+                                        <Icons.Wrapper>
+                                            <Icons.Edit />
+                                        </Icons.Wrapper>
+                                        <Icons.Wrapper>
+                                            <Icons.Trash />
+                                        </Icons.Wrapper>
+                                    </Icons>
+                                </Box.Wrapper>
+                            </Box.Container>
+                        )
+                    })
+                }
             </Box>
         </Wrapper>
     </Container>
