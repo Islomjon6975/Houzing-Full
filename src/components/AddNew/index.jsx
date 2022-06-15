@@ -14,12 +14,12 @@ export const AddNew = () => {
 
     const containerStyle = {
         width: '100%',
-        height: '450px'
+        height: '600px'
     };
     
     const center = {
-        lat: state?.location?.latitude,
-        lng: state?.location?.longitude,
+        lat: 41.311081,
+        lng:  69.240562,
     };
     
     const { isLoaded } = useJsApiLoader({
@@ -44,6 +44,21 @@ export const AddNew = () => {
           
         ],
       };
+
+      const onLoad = React.useCallback(function callback(map) {
+        const bounds = new window.google.maps.LatLngBounds(center);
+        map.fitBounds(bounds);
+        setMap(map)
+      }, [])
+    
+      const onUnmount = React.useCallback(function callback(map) {
+        setMap(null)
+      }, [])
+
+      const onMapClick = (e) => {
+        console.log(e?.latLng?.lat(), 'lat');
+        console.log(e?.latLng?.lng(), 'lng');
+      }
     
 
   return (
@@ -92,29 +107,15 @@ export const AddNew = () => {
                 {
                     isLoaded ? (
                         <GoogleMap
-                        mapContainerStyle={containerStyle}
-                        center={center}
-                        zoom={15}
-                        //   onLoad={onLoad}
-                        //   onUnmount={onUnmount}
+                          mapContainerStyle={containerStyle}
+                          center={center}
+                          zoom={10}
+                          onLoad={onLoad}
+                          onUnmount={onUnmount}
+                          onClick={onMapClick}
                         >
-                            {
-                            state?.location?.latitude && state?.location?.longitude ?  (
-                                <>
-                                    <Marker position={center} />
-                                    <Marker position={{
-                                        lat: state?.location?.latitude + 1,
-                                        lng: state?.location?.longitude - 1,
-                                    }} />
-                                </>
-                            ) : <GoogleMap mapContainerStyle={containerStyle}
-                                    center={{
-                                        lat: 41.311081,
-                                        lng:  69.240562,
-                                    }}
-                                    zoom={15} />
-                            }
-                        <></>
+                          { /* Child components, such as markers, info windows, etc. */ }
+                          <></>
                         </GoogleMap>
                     ) : <></>
                 }
@@ -163,6 +164,7 @@ export const AddNew = () => {
             <Box>
                 <Subtitle>Amenities</Subtitle>
                 <Box.Table >
+                    <tbody>
                     <tr>
                         <td>
                             <Checkbox >Air conditioning</Checkbox>
@@ -247,6 +249,7 @@ export const AddNew = () => {
                             <Checkbox >Cleaning Service</Checkbox>
                         </td>
                     </tr>
+                    </tbody>
                 </Box.Table>
             </Box>
             <Box>
