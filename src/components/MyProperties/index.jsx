@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 import { useHttp } from '../../hooks/useHttps';
 import Button from '../Generic/Button';
 import { Box, Container, Icons, Image, Subtitle, TexContainer, Title, Wrapper } from './style';
@@ -11,7 +11,8 @@ const {REACT_APP_BASE_URL:url} = process.env
 export const MyProperties = () => {
     const {request} = useHttp();
     const [state, setState] = useState([])
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [id, setId] = useState();
 
     useQuery(
         'getMyProperties',
@@ -27,6 +28,33 @@ export const MyProperties = () => {
             onSuccess: (res) => {setState(res?.data || [])}
         }
     )
+
+
+    // useQuery(
+    //     'delete Item',
+    //     () => {
+    //         return fetch(`${url}/v1/houses/${id}`, {
+    //             method: 'DELETE',
+    //         }).then(res => res.json())
+    //     },
+    //     {
+    //         // onSuccess: (res) => 
+    //     }
+    // )
+
+    const deleteProduct = useMutation((id) => {
+         request({url:`/v1/houses/${id}`, method:'DELETE'})
+    })
+
+    const onDelete = (idd)  => {
+        deleteProduct.mutate(idd, {
+            onSuccess: (res) => console.log(res, 'fff')
+        })
+        // fetch(`${url}/v1/houses/${idd}`, {
+        //     method: 'DELETE'
+        // }).then(res => res.json())
+        console.log(idd, 'idddd');
+    }
 
 
   return (
@@ -87,7 +115,7 @@ export const MyProperties = () => {
                                             <Icons.Edit />
                                         </Icons.Wrapper>
                                         <Icons.Wrapper>
-                                            <Icons.Trash />
+                                            <Icons.Trash onClick={() => onDelete(data.id)} />
                                         </Icons.Wrapper>
                                     </Icons>
                                 </Box.Wrapper>
