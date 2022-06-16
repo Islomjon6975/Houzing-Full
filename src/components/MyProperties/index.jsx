@@ -62,28 +62,28 @@ export const MyProperties = () => {
         <Wrapper>
             <Wrapper.Wrapper>
                 <Title>My Properties</Title>
-                <Button onClick={() => navigate('/properties/addnew')} type='primary' width={'120px'}>Add New</Button>
+                <span className='btn'><Button onClick={() => navigate('/properties/addnew')} type='primary' width={'120px'}>Add New</Button></span>
             </Wrapper.Wrapper>
+            <span className='btn'><Button onClick={() => navigate('/properties/addnew')} type='primary' width={'120px'}>Add New</Button></span>
+
             <Box>
                 <Box.Container>
                     <Box.Wrapper>
                         <Subtitle first>Listing Title</Subtitle>
                     </Box.Wrapper>
-                    <Box.Wrapper>
-                        <Subtitle>Date Published</Subtitle>
+                    <Box.Wrapper none>
+                        <Subtitle >Date Published</Subtitle>
                     </Box.Wrapper>
-                    <Box.Wrapper>
+                    <Box.Wrapper none>
                         <Subtitle>Status</Subtitle>
                     </Box.Wrapper>
-                    <Box.Wrapper>
+                    <Box.Wrapper none>
                         <Subtitle>View</Subtitle>
                     </Box.Wrapper>
                     <Box.Wrapper>
                         <Subtitle last>Action</Subtitle>
                     </Box.Wrapper>
-                </Box.Container>
-                
-                
+                </Box.Container> 
                 {
                     state?.map((data) => {
                         return(
@@ -100,13 +100,13 @@ export const MyProperties = () => {
                                         <TexContainer.Price>$7,500/mo</TexContainer.Price>
                                     </TexContainer>
                                 </Box.Wrapper>
-                                <Box.Wrapper>
+                                <Box.Wrapper none>
                                     <TexContainer.Status>30 December 2022</TexContainer.Status>
-                                </Box.Wrapper>
-                                <Box.Wrapper>
+                                </Box.Wrapper >
+                                <Box.Wrapper none>
                                     <TexContainer.Status>Pending</TexContainer.Status>
                                 </Box.Wrapper>
-                                <Box.Wrapper>
+                                <Box.Wrapper none>
                                     <TexContainer.Status>5933</TexContainer.Status>
                                 </Box.Wrapper>
                                 <Box.Wrapper>

@@ -11,10 +11,17 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-    width: 1440px;
+    max-width: 1440px;
     padding: 48px 130px 24px 130px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    @media (max-width: 1200px) {
+        padding: 40px 30px 20px 30px;
+    }
+    @media (max-width: 550px) {
+        padding: 32px 15px 16px 15px;
+    }
 `
 
 Wrapper.Wrapper = styled.div`
@@ -22,6 +29,14 @@ Wrapper.Wrapper = styled.div`
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    @media (max-width: 1200px) {
+        .btn{
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+        }
+    }
+    
 `
 
 const Title = styled.div`
@@ -34,6 +49,9 @@ const Title = styled.div`
     color: #0D263B;
     margin: 32px 0;
     text-align: left;
+    @media (max-width: 1200px) {
+        font-size: 24px;
+    }
 `
 
 const Box = styled.div`
@@ -53,11 +71,18 @@ Box.Container = styled.div`
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
     width: 100%;
     gap: 5px;
+    @media (max-width: 1200px) {
+        display: flex;
+        justify-content: space-between;
+    }
 `
 
 Box.Wrapper = styled.div`
     display: flex;
     grid-gap: 16px;
+    @media (max-width: 1200px) {
+        display: ${({none}) => none && 'none'};
+    }
 `
 
 const Subtitle = styled.div`
@@ -136,6 +161,9 @@ TexContainer.Sale = styled.div`
     :active{
         transform: scale(0.98);
     }
+    @media (max-width: 1200px) {
+        display: none;
+    }
 
 `
 
@@ -176,6 +204,9 @@ TexContainer.Status = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
+     @media (max-width: 1200px) {
+        display: none;
+    }
 `
 
 const Icons = styled.div`
@@ -184,6 +215,9 @@ const Icons = styled.div`
     width: 100%;
     justify-content: flex-end;
     gap: 10px;
+    @media (max-width: 600px) {
+       flex-direction: column;
+    }
 `
 
 Icons.Wrapper = styled.div`

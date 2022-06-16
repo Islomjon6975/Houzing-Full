@@ -9,12 +9,19 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-    width: 1440px;
+    max-width: 1440px;
     padding: 48px 130px 24px 130px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 32px;
+    @media (max-width: 768px) {
+        padding: 40px 30px 20px 30px;
+    }
+    @media (max-width: 550px) {
+        padding: 35px 20px 16px 20px;
+    }
 `
 
 const Title = styled.div`
@@ -56,6 +63,9 @@ Box.Wrappar = styled.div`
 Box.Inputs = styled.div`
     display: flex;
     gap: 20px;
+    @media (max-width:860px) {
+        flex-direction: column;
+    }
 `
 
 Box.Message = styled.textarea`
@@ -90,6 +100,11 @@ Box.Uploads = styled.div`
 
 Box.Table = styled.table`
     height: 300px;
+    @media (max-width: 768px) {
+        td{
+            display: block;
+        }   
+    }
 `
 
 export { Container, Wrapper, Title, Box, Subtitle, Description}
