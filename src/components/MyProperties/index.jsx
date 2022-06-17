@@ -12,7 +12,6 @@ export const MyProperties = () => {
     const {request} = useHttp();
     const [state, setState] = useState([])
     const navigate = useNavigate();
-    const [id, setId] = useState();
 
     useQuery(
         'getMyProperties',
@@ -30,30 +29,14 @@ export const MyProperties = () => {
     )
 
 
-    // useQuery(
-    //     'delete Item',
-    //     () => {
-    //         return fetch(`${url}/v1/houses/${id}`, {
-    //             method: 'DELETE',
-    //         }).then(res => res.json())
-    //     },
-    //     {
-    //         // onSuccess: (res) => 
-    //     }
-    // )
-
     const deleteProduct = useMutation((id) => {
-         request({url:`/v1/houses/${id}`, method:'DELETE'})
+         request({url:`/v1/houses/${id}`, method:'DELETE', token: true})
     })
 
     const onDelete = (idd)  => {
         deleteProduct.mutate(idd, {
             onSuccess: (res) => console.log(res, 'fff')
         })
-        // fetch(`${url}/v1/houses/${idd}`, {
-        //     method: 'DELETE'
-        // }).then(res => res.json())
-        console.log(idd, 'idddd');
     }
 
 
@@ -112,10 +95,13 @@ export const MyProperties = () => {
                                 <Box.Wrapper>
                                     <Icons>
                                         <Icons.Wrapper>
-                                            <Icons.Edit />
+                                            <Icons.Edit onClick={() => navigate(`properties/addnew/${data?.id}`)} />
                                         </Icons.Wrapper>
                                         <Icons.Wrapper>
-                                            <Icons.Trash onClick={() => onDelete(data.id)} />
+                                            <Icons.Trash 
+                                            title='Uyni ochirmoqchimsiz?'
+                                            onClick={onDelete}
+                                            />
                                         </Icons.Wrapper>
                                     </Icons>
                                 </Box.Wrapper>
