@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 export const AddNew = () => {
     const navigate = useNavigate()
     const { request } = useHttp()
+
     const [center, setCenter] = useState({
         lat: 41.311081,
         lng:  69.240562,
@@ -73,12 +74,26 @@ export const AddNew = () => {
         })
       }
 
+      const [state, setState] = useState();
+
+      const onChange = (e) => {
+        const {name, value} = e.target;
+        setState(()=>{
+            return{
+                ...state,
+                [name]: value,
+            }
+        })
+      }
+
+      console.log(state)
+
       const {mutate} = useMutation(() => request({
         url: '/v1/houses', 
         method: 'POST', 
         token: true,
         body : {
-            "address": "string",
+            "address": state.address,
             "attachments": [
               {
                 "imgPath": "https://static.ngs.ru/news/99/preview/20ff64d4a539a0b4c37c733164f27a850068ccff_1100.jpg"
@@ -95,7 +110,7 @@ export const AddNew = () => {
               "internet": true,
               "tv": true
             },
-            "country": "Uzbekistan",
+            "country": state.country,
             "description": "uynilar jadvali  iiii",
             "favorite": true,
             "homeAmenitiesDto": {
@@ -122,25 +137,26 @@ export const AddNew = () => {
               "latitude": center?.lat,
               "longitude": center?.lng,
             },
-            "name": "string",
-            "price": 0,
+            "name":state.name,
+            "price": state.price,
             "region": "Tashkent city",
-            "salePrice": 0,
+            "salePrice": state.salePrice,
             "status": true,
-            "zipCode": "123456"
+            "zipCode": state.zipCode,
           },
     }))
     
     const onSubmit = () => {
-    mutate('', {
-        onSuccess: (res) => {
-            console.log(res);
-            if(res?.success){
-                navigate('/myproperties');
+        mutate('', {
+            onSuccess: (res) => {
+                console.log(res);
+                if(res?.success){
+                    navigate('/myproperties');
+                }
             }
-        }
-    });
+        });
     };
+
   return (
     <Container>
         <Wrapper>
@@ -148,11 +164,11 @@ export const AddNew = () => {
             <Box>
                 <Subtitle>Contact information</Subtitle>
                 <Box.Inputs>
-                    <Input placeholder='Property title' />
+                    <Input  onChange={onchange} name='name'  placeholder='Property title' />
                     <Input placeholder='Category' />
                 </Box.Inputs>
                 <Box.Inputs>
-                    <Box.Message placeholder='Property Description'></Box.Message>
+                    <Box.Message onChange={onchange} name='description'  placeholder='Property Description'></Box.Message>
                 </Box.Inputs>
             </Box>
             <Box>
@@ -171,19 +187,19 @@ export const AddNew = () => {
             <Box>
                 <Subtitle>Price</Subtitle>
                 <Box.Inputs>
-                    <Input placeholder='Price' />
-                    <Input placeholder='Sale Price' />
+                    <Input   onChange={onchange} name='price' placeholder='Price' />
+                    <Input   onChange={onchange} name='salePrice' placeholder='Sale Price' />
                 </Box.Inputs>
             </Box>
             <Box>
                 <Subtitle>Location</Subtitle>
                 <Box.Inputs>
-                    <Input placeholder='Regions' />
-                    <Input placeholder='Friendly address' />
+                    <Input onChange={onChange} name='country' placeholder='Regions' />
+                    <Input onChange={onChange} name='address' placeholder='Friendly address' />
                 </Box.Inputs>
-                {/* <Box.Inputs>
-                    <Input placeholder='Map location' />
-                </Box.Inputs> */}
+                <Box.Inputs>
+                    <Input onChange={onChange} name='zipCode' placeholder='Zip Code' />
+                </Box.Inputs>
                 {
                     isLoaded ? (
                         <GoogleMap
@@ -194,6 +210,7 @@ export const AddNew = () => {
                         //   onUnmount={onUnmount}
                           onClick={onMapClick}
                         >
+                          <Marker position={center} />
                           <Marker position={center} />
                           <></>
                         </GoogleMap>
@@ -345,6 +362,6 @@ export const AddNew = () => {
         </Wrapper>
     </Container>
   )
-}
+};
 
 export default AddNew
