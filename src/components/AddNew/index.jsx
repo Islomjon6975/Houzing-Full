@@ -209,7 +209,7 @@ export const AddNew = () => {
                 <Subtitle>Media</Subtitle>
                 <Box.Uploads>
                     <Description>Featured image</Description>
-                    <Box.Inputs>
+                    <Box.Inputs>sdi
                         <Box.Images />
                         <Box.Images />
                         <Box.Images />
