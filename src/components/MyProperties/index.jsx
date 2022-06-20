@@ -40,7 +40,7 @@ export const MyProperties = () => {
         deleteProduct.mutate(idd, {
             onSuccess: (res) => console.log(res, 'fff')
         })
-    }
+    };
 
 
   return (

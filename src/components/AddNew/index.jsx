@@ -4,7 +4,7 @@ import Input from '../Generic/Input'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import { Box, Container, Description, Subtitle, Title, Wrapper } from './style'
 import { useState } from 'react';
-import { Form, Upload } from 'antd';
+import { Upload } from 'antd';
 import Checkbox from '../Generic/Checkbox';
 import { useHttp } from '../../hooks/useHttps';
 import { useMutation } from 'react-query';
