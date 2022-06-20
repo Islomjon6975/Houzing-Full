@@ -47,7 +47,7 @@ export const MyProperties = () => {
                 <Title>My Properties</Title>
                 <span className='btn'><Button onClick={() => navigate('/properties/addnew')} type='primary' width={'120px'}>Add New</Button></span>
             </Wrapper.Wrapper>
-            <span className='btn'><Button onClick={() => navigate('/properties/addnew')} type='primary' width={'120px'}>Add New</Button></span>
+            <span className='btnn'><Button onClick={() => navigate('/properties/addnew')} type='primary' width={'120px'}>Add New</Button></span>
 
             <Box>
                 <Box.Container>

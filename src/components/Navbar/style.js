@@ -99,6 +99,8 @@ Logo.Title = styled('div')`
 `
 
 const Span = styled.div`
+    display: flex;
+    gap: 10px;
     @media (max-width: 768px) {
         display: none;
     }

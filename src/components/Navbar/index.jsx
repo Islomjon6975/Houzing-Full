@@ -59,12 +59,15 @@ export const Navbar = () => {
                 </NavbarBody>
                 <Span>
                     {
+                        localStorage.getItem('token') && <Button class='loginn' onClick={() => navigate('/myproperties')} width={'120px'}>Profile</Button>
+                    } 
+                    {
                         localStorage.getItem('token') ? (
                             <Button onClick={() => {
                                 localStorage.clear();
                                 navigate("/home")}} width={'120px'} >Log out</Button>
                         ) : (
-                            <Button class='loginn' onClick={() => navigate('/signin')} width={'120px'}>Login</Button>
+                            <Button class='loginn' onClick={() => navigate('/signin')} width={'120px'}>Signin</Button>
                         )
                     }
                 </Span>

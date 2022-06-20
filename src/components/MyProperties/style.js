@@ -16,6 +16,9 @@ const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    .btnn{
+        display: none;
+    }
     @media (max-width: 1200px) {
         padding: 40px 30px 20px 30px;
     }
@@ -29,6 +32,7 @@ Wrapper.Wrapper = styled.div`
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    
     @media (max-width: 1200px) {
         .btn{
             display: inline-block;
