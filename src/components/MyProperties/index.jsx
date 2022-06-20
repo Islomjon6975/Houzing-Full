@@ -24,8 +24,11 @@ export const MyProperties = () => {
             }).then(res => res.json())
         }, 
         {
-            onSuccess: (res) => {setState(res?.data || [])}
-        }
+            onSuccess: (res) => {setState(res?.data || [])},
+            refetchOnWindowFocus: false,
+            keepPreviousData: true,
+        },
+        
     )
 
 
