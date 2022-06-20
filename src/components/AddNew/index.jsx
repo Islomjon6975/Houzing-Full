@@ -75,6 +75,7 @@ export const AddNew = () => {
       }
 
       const [state, setState] = useState();
+      const [homeAmenitiesDto, setHomeAmenitiesDto] = useState();
 
       const onChange = (e) => {
         const {name, value} = e.target;
@@ -84,9 +85,17 @@ export const AddNew = () => {
                 [name]: value,
             }
         })
-      }
+        setHomeAmenitiesDto(
+            ()=>{
+                return{
+                    ...state,
+                    [name]: value,
+                }
+            }
+        )
+      };
 
-      console.log(state)
+      console.log(homeAmenitiesDto)
 
       const {mutate} = useMutation(() => request({
         url: '/v1/houses', 
@@ -126,12 +135,12 @@ export const AddNew = () => {
               "superMarket": true
             },
             "houseDetails": {
-              "area": 10,
-              "bath": 20,
-              "beds": 30,
-              "garage": 20,
-              "room": 10,
-              "yearBuilt": 2022
+              "area": homeAmenitiesDto.area,
+              "bath": homeAmenitiesDto.bath,
+              "beds": homeAmenitiesDto.beds,
+              "garage": homeAmenitiesDto.garage,
+              "room": homeAmenitiesDto.room,
+              "yearBuilt": homeAmenitiesDto.yearBuilt,
             },
             "locations": {
               "latitude": center?.lat,
@@ -174,14 +183,14 @@ export const AddNew = () => {
             <Box>
                 <Subtitle>Additional</Subtitle>
                 <Box.Inputs>
-                    <Input placeholder='Rooms' />
-                    <Input placeholder='Beds' />
-                    <Input placeholder='Baths' />
+                    <Input onChange={onChange} name='room' placeholder='Rooms' />
+                    <Input onChange={onChange} name='beds' placeholder='Beds' />
+                    <Input onChange={onChange} name='bath' placeholder='Baths' />
                 </Box.Inputs>
                 <Box.Inputs>
-                    <Input placeholder='Garages' />
-                    <Input placeholder='Year bulid' />
-                    <Input placeholder='Home area (sqft)' />
+                    <Input onChange={onChange} name='garage' placeholder='Garages' />
+                    <Input onChange={onChange} name='yearBuilt' placeholder='Year bulid' />
+                    <Input onChange={onChange} name='area' placeholder='Home area (sqft)' />
                 </Box.Inputs>
             </Box>
             <Box>
