@@ -28,10 +28,12 @@ export const AddNew = () => {
     //     lat: 41.311081,
     //     lng:  69.240562,
     // };
+
+    const { REACT_APP_GoogleApiKey: key } = process.env;
     
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyAkkKvMyf8Tk3Q8s7MWXin6njbtjIjq2S4"
+        googleMapsApiKey: key,
     })
     
     const [map, setMap] = React.useState(null)
@@ -187,9 +189,9 @@ export const AddNew = () => {
                         <GoogleMap
                           mapContainerStyle={containerStyle}
                           center={center}
-                          zoom={15}
-                          onLoad={onLoad}
-                          onUnmount={onUnmount}
+                          zoom={12}
+                        //   onLoad={onLoad}
+                        //   onUnmount={onUnmount}
                           onClick={onMapClick}
                         >
                           <Marker position={center} />
