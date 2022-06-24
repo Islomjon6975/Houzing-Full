@@ -8,6 +8,7 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
     margin-bottom: 96px;
+    min-height: calc(100vh - 80px);
 `
 
 const Wrapper = styled.div`

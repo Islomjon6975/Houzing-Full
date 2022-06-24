@@ -37,14 +37,8 @@ export const MyProperties = () => {
          request({url:`/v1/houses/${id}`, method:'DELETE', token: true})
     })
 
-    // const onDelete = (idd)  => {
-    //     deleteProduct.mutate(idd, {
-    //         onSuccess: (res) => console.log(res, 'fff')
-    //     })
-    // };
-
-    const onEdite = () => {
-        navigate(`/properties/addnew`)
+    const onEdite = (id) => {
+        navigate(`/properties/addnew/:${id}`)
     }
 
     const confirm = (idd) => {
@@ -119,7 +113,7 @@ export const MyProperties = () => {
                                 <Box.Wrapper>
                                     <Icons>
                                         <Icons.Wrapper>
-                                            <Icons.Edit onClick={onEdite} />
+                                            <Icons.Edit onClick={() => onEdite(data?.id)} />
                                         </Icons.Wrapper>
                                         <Icons.Wrapper>
                                         <Popconfirm
