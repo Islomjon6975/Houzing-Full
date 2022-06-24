@@ -11,19 +11,23 @@ import { useMutation, useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export const AddNew = () => {
+    const [state, setState] = useState()
+    const [dataa, setDataa] = useState()
     const navigate = useNavigate()
     const { request } = useHttp()
     const [input, setInput] = useState('')
 
     const {id} = useParams();
     useQuery('getSignle Item', () => {
-        return request({url: `/v1/houses/${id}`, token: true,},
-        {
-            onSuccess: (res) => {
-
-            }
-        })
-    })
+        return request({url: `/v1/houses/${id}`, token: true})
+    },
+    {
+        onSuccess: (res) => {
+            console.log(res, 'res');
+            setDataa(res?.data)
+        }
+    }
+    )
 
 
 
@@ -87,7 +91,6 @@ export const AddNew = () => {
         })
       }
 
-      const [state, setState] = useState();
       const [homeAmenitiesDto, setHomeAmenitiesDto] = useState();
 
       const onChange = (e) => {
@@ -201,6 +204,8 @@ export const AddNew = () => {
         }  
     };
 
+    console.log(dataa, 'dataaaaaaaaaaaaaaaa')
+
   return (
     <Container>
         <Wrapper>
@@ -208,41 +213,41 @@ export const AddNew = () => {
             <Box>
                 <Subtitle>Contact information</Subtitle>
                 <Box.Inputs>
-                    <Input onChange={onchange} value={state?.address} name='name'  placeholder='Property title' />
+                    <Input onChange={onchange} value={dataa?.address} name='name'  placeholder='Property title' />
                     <Input placeholder='Category' />
                 </Box.Inputs>
                 <Box.Inputs>
-                    <Box.Message onChange={onchange} name='description'  placeholder='Property Description'></Box.Message>
+                    <Box.Message  value={dataa?.description} onChange={onchange} name='description'  placeholder='Property Description'></Box.Message>
                 </Box.Inputs>
             </Box>
             <Box>
                 <Subtitle>Additional</Subtitle>
                 <Box.Inputs>
-                    <Input onChange={onChange} name='room' placeholder='Rooms' />
-                    <Input onChange={onChange} name='beds' placeholder='Beds' />
-                    <Input onChange={onChange} name='bath' placeholder='Baths' />
+                    <Input value={dataa?.houseDetails?.room} onChange={onChange} name='room' placeholder='Rooms' />
+                    <Input value={dataa?.houseDetails?.beds} onChange={onChange} name='beds' placeholder='Beds' />
+                    <Input value={dataa?.houseDetails?.bath} onChange={onChange} name='bath' placeholder='Baths' />
                 </Box.Inputs>
                 <Box.Inputs>
-                    <Input onChange={onChange} name='garage' placeholder='Garages' />
-                    <Input onChange={onChange} name='yearBuilt' placeholder='Year bulid' />
-                    <Input onChange={onChange} name='area' placeholder='Home area (sqft)' />
+                    <Input value={dataa?.houseDetails?.garage} onChange={onChange} name='garage' placeholder='Garages' />
+                    <Input value={dataa?.houseDetails?.yearBuilt} onChange={onChange} name='yearBuilt' placeholder='Year bulid' />
+                    <Input value={dataa?.houseDetails?.area} onChange={onChange} name='area' placeholder='Home area (sqft)' />
                 </Box.Inputs>
             </Box>
             <Box>
                 <Subtitle>Price</Subtitle>
                 <Box.Inputs>
-                    <Input   onChange={onchange} name='price' placeholder='Price' />
-                    <Input   onChange={onchange} name='salePrice' placeholder='Sale Price' />
+                    <Input value={dataa?.price}   onChange={onchange} name='price' placeholder='Price' />
+                    <Input value={dataa?.salePrice}   onChange={onchange} name='salePrice' placeholder='Sale Price' />
                 </Box.Inputs>
             </Box>
             <Box>
                 <Subtitle>Location</Subtitle>
                 <Box.Inputs>
-                    <Input onChange={onChange} name='country' placeholder='Regions' />
-                    <Input onChange={onChange} name='address' placeholder='Friendly address' />
+                    <Input value={dataa?.country} onChange={onChange} name='country' placeholder='Regions' />
+                    <Input value={dataa?.region} onChange={onChange} name='address' placeholder='Friendly address' />
                 </Box.Inputs>
                 <Box.Inputs>
-                    <Input onChange={onChange} name='zipCode' placeholder='Zip Code' />
+                    <Input  value={dataa?.zipCode} onChange={onChange} name='zipCode' placeholder='Zip Code' />
                 </Box.Inputs>
                 {
                     isLoaded ? (
