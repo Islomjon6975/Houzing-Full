@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { message, Popconfirm } from 'antd';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMutation, useQuery } from 'react-query';
@@ -36,10 +37,30 @@ export const MyProperties = () => {
          request({url:`/v1/houses/${id}`, method:'DELETE', token: true})
     })
 
-    const onDelete = (idd)  => {
+    // const onDelete = (idd)  => {
+    //     deleteProduct.mutate(idd, {
+    //         onSuccess: (res) => console.log(res, 'fff')
+    //     })
+    // };
+
+    const onEdite = () => {
+        navigate(`/properties/addnew`)
+    }
+
+    const confirm = (idd) => {
         deleteProduct.mutate(idd, {
-            onSuccess: (res) => console.log(res, 'fff')
+            onSuccess: (res) => {
+                if(res?.success) {
+                    message.success('Deleted');
+                    // refetch();
+                }
+            }
         })
+      };
+      
+    const cancel = (e) => {
+        console.log(e);
+        message.error('Canceled');
     };
 
 
@@ -98,13 +119,21 @@ export const MyProperties = () => {
                                 <Box.Wrapper>
                                     <Icons>
                                         <Icons.Wrapper>
-                                            <Icons.Edit onClick={() => navigate(`properties/addnew/${data?.id}`)} />
+                                            <Icons.Edit onClick={onEdite} />
                                         </Icons.Wrapper>
                                         <Icons.Wrapper>
-                                            <Icons.Trash 
-                                            title='Uyni ochirmoqchimsiz?'
-                                            onClick={onDelete}
-                                            />
+                                        <Popconfirm
+                                                title="Are you sure to delete this task?"
+                                                onConfirm={() => confirm(data?.id)}
+                                                onCancel={cancel}
+                                                okText="Yes"
+                                                cancelText="No"
+                                            >
+                                                <Icons.Trash 
+                                                    title='Uyni ochirmoqchimsiz?'
+                                                />
+                                            </Popconfirm>
+                                            
                                         </Icons.Wrapper>
                                     </Icons>
                                 </Box.Wrapper>
